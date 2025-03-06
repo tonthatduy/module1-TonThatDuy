@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký Học Viên</title>
+    <style>
+        body {
+            background: white;
+            font-family: "Arial", sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .khung {
+            display: flex;
+            justify-content: center;
+            background: khaki;
+            margin: 20px;
+            border: white solid;
+            padding: 15px;
+            width: 400px;
+            border: 1px solid #ccc
+        }
+
+        .tieude {
+            background: aquamarine;
+            color: blue;
+            text-align: left;
+            padding: -15px;
+            width: 400px;
+            font-size: 15px;
+        }
+
+        label {
+            color: blue;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="khung">
+    <form>
+        <div class="tieude">
+            <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+        </div>
+        <div>
+            <label for="name">Họ và tên</label>
+            <input style="margin-left: 10px" name="yourname" type="text" id="name" size="20">
+        </div>
+        <div>
+            <label for="bdate">Ngày sinh</label>
+            <input  style="margin-left: 8px" name="birthdate" type="text" id="bdate" size="10">
+        </div>
+        <div>
+            <label> Giới tính</label>
+            <input  style="margin-left: 20px" name="gender" id="male" type="radio" value="Nam"/>
+            <label style="color: black" for="male">Nam</label>
+            <input style="margin-left: 20px" name="gender" id="female" type="radio" value="Nữ"/>
+            <label style="color: black" for="female">Nữ</label>
+        </div>
+        <div>
+            <label>Địa chỉ</label>
+            <textarea style="margin-left: 105px; width: 250px" rows="3" ></textarea>
+        </div>
+        <div>
+            <label for="class">Lớp</label>
+            <select name="class" id="class" style="margin-left: 52px"> Lớp
+                <option value="chonlop">Chọn lớp</option>
+                <option value="1a">Lớp 1a</option>
+                <option value="1b">Lớp 1b</option>
+                <option value="1c">Lớp 1c</option>
+                <option value="1d">Lớp 1d</option>
+                <option value="1e">Lớp 1e</option>
+            </select>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input style="margin-left: 40px" name="email" id="email" type="text" size="30">
+        </div>
+        <div>
+            <label for="sdt">Điện thoại</label>
+            <input style="margin-left: 8px" name="phone" id="sdt" type="text" size="25">
+        </div>
+        <div>
+            <button type="submit">Đăng ký</button>
+            <button type="reset">Nhập lại</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
