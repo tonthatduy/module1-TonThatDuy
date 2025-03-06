@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form_lay_survey_khach</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;;
+            font-size: 16px;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .grouptext:hover {
+            background: cornsilk;
+            color: black;
+        }
+        .container {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+    <h2>Market Research Survey</h2>
+    <p>Please take a few momments to complete this satisfaction survey </p>
+    </div>
+<form>
+    <div class="grouptext">
+        <div class="title"><label for="age">What is your age range?</label>
+        </div>
+        <select name="age" id="age" style="width: 600px; height:20px">
+            <option value="agerange">18 - 24</option>
+            <option value="agerange">25 - 34</option>
+            <option value="agerange">35 - 50</option>
+            <option value="agerange">50+</option>
+        </select>
+    </div>
+    <div class="grouptext">
+        <div class="title"><label for="imcome"> What is your yearly income range?</label>
+        </div>
+        <select name="imcome" id="imcome" style="width: 600px; height: 20px">
+            <option value="imcomerange">$0 - $25,000</option>
+            <option value="imcomerange">$25,001 - $50,000</option>
+            <option value="imcomerange">$50,001 - $100,000</option>
+            <option value="imcomerange">$100,000+</option>
+        </select>
+    </div>
+    <div class="grouptext">
+        <div class="title"><label>Gender Identity</label>
+        </div>
+        <label><input name="gender" type="radio" value="male">Male</label><br>
+        <label><input name="gender" type="radio" value="female">Female</label><br>
+        <label><input name="gender" type="radio" value="nonbinary">Nonbinary</label><br>
+        <label><input name="gender" type="radio" value="other">Other</label><br>
+        <input name="gender" type="text" maxlength="250">
+    </div>
+    <div class="grouptext">
+        <div class="title">
+            <label>Which of the following products have your purchased in the last 2 months.Please check all that
+                apply</label>
+        </div>
+        <label><input name="products" type="checkbox" value="product 1">Product 1</label><br>
+        <label><input name="products" type="checkbox" value="product 2">Product 2</label><br>
+        <label><input name="products" type="checkbox" value="product 3">Product 3</label><br>
+    </div>
+    <div class="grouptext">
+        <div class="title">
+            <label>How often would you use our new product?</label>
+        </div>
+        <label><input name="nproducts" type="radio" value="daily">Daily</label><br>
+        <label><input name="nproducts" type="radio" value="weekly">Weekly</label><br>
+        <label><input name="nproducts" type="radio" value="monthly">Monthly</label><br>
+    </div>
+    <div class="grouptext">
+        <div class="title">
+            <label>What would you pay for the new product?</label>
+        </div>
+        <label>$</label>
+        <label>
+            <input name="pay" type="text" placeholder="Dollars" size="5">.
+            <input name="pay" type="text" placeholder="Cents" size="3">
+        </label>
+    </div>
+    <div class="grouptext">
+        <div class="title">
+            What features would you like to see in the new product.
+            </div>
+                <textarea rows="9" cols="60" name="features"></textarea>
+            </div>
+</form>
+</div>
+</body>
+</html>
