@@ -1,23 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Học HTML</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sở Thích Của Bạn</title>
+    <style>
+        body {
+            background-color: #ccffff; /* Màu nền xanh nhạt */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        .header {
+            background: #ff6600;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            color: blue;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #000;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            color: #ff6600;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            width: 50%;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .buttons button {
+            padding: 8px 15px;
+            margin: 5px;
+            border: 1px solid black;
+            background: #ddd;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <form method="get" action="simpleform.html">
-        <h2>Order Form</h2>
-        <p>What would you like to buy?</p>
-        <select>
-            <option value = "  ">A</option>
-            <option>B (+  0.5$)</option>
-            <option>C (+  0.5$)</option>
-        </select>
-        <p>How many would you like to order?</p>
-        <input type="radio" name="rd"/> 1 - $10 <br/>
-        <input type="radio" name="rd"/> 2 - $20 <br/>
-        <input type="radio" name="rd"/> 3 - $25 <br/>
+
+<div class="container">
+    <div class="header">SỞ THÍCH CỦA BẠN</div>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label>Sở thích</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobby" value="the-thao"> Thể thao</label>
+                <label><input type="checkbox" name="hobby" value="am-nhac"> Âm nhạc</label>
+                <label><input type="checkbox" name="hobby" value="doc-sach"> Đọc sách</label>
+                <label><input type="checkbox" name="hobby" value="luot-web"> Lướt web</label>
+                <label><input type="checkbox" name="hobby" value="choi-game"> Chơi game</label>
+                <label><input type="checkbox" name="hobby" value="dien-anh"> Điện ảnh</label>
+                <label><input type="checkbox" name="hobby" value="du-lich"> Du lịch</label>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="submit">Gửi thông tin</button>
+            <button type="reset">Nhập lại</button>
+        </div>
     </form>
+</div>
+
 </body>
 </html>

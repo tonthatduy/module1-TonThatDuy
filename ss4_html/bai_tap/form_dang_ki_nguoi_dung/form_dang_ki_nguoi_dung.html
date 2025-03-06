@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký Người Dùng</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
+    <div>
+        <label for="name">Họ Và Tên:</label><br>
+        <input name="name" id="name" type="text" size="15"/>
+    </div>
+    <div>
+        <label for="email">Email:</label><br>
+        <input name="email" id="email" type="text" size="15"/>
+    </div>
+    <div>
+        <label for="phone">Số điện thoại:</label><br>
+        <input name="phone" id="phone" type="text" size="15"/>
+    </div>
+    <p>Giới Tính:<br>
+        <input name="gender" id="male" type="radio" value="Nam"/>
+        <label for="male">Nam</label>
+        <input name="gender" id="female" type="radio" value="Nữ"/>
+        <label for="female">Nữ</label></p>
+    <p><input type="submit" name="btSubmit" value="Đăng Ký"></p>
+
+</form>
+</body>
+</html>
