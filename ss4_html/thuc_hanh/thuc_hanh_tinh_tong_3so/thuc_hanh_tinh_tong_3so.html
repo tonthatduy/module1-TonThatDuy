@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Tổng 3 số</title>
+</head>
+<input id="number1">
+<input id="number2">
+<input id="number3">
+<p id="ketqua"></p>
+<button onclick="tinhTong();">Kết Quả</button>
+<body>
+<script>
+    function tinhTong() {
+        // Lấy giá trị từ input
+        let so1 = parseFloat(document.getElementById("number1").value);
+        let so2 = parseFloat(document.getElementById("number2").value);
+        let so3 = parseFloat(document.getElementById("number3").value);
+        let tinhtong = so1 + so2 + so3;
+        document.getElementById("ketqua").innerText = "Kết Quả " + tinhtong;
+    }
+</script>
+</body>
+</html>

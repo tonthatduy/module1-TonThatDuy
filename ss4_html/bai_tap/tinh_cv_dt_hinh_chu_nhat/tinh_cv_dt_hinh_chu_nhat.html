@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính CV DT hình chữ nhật</title>
+</head>
+<body>
+<div>
+    <h2>Tính chú vi hình chữ nhật</h2>
+</div>
+<input type="number" id="n1" placeholder="Nhập chiều dài">
+<input type="number" id="n2" placeholder="Nhập chiều rộng">
+<p id="ketqua"></p>
+<button onclick="tinhChuVi();">Kết Quả</button>
+<div>
+    <h2>Tính diện tích hình chữ nhật</h2>
+</div>
+<input type="number" id="n3" placeholder="Nhập chiều dài">
+<input type="number" id="n4" placeholder="Nhập chiều rộng">
+<p id="dapan"></p>
+<button onclick="tinhDienTich();">Kết Quả</button>
+<script>
+    function tinhChuVi() {
+        let number1 = parseFloat(document.getElementById("n1").value);
+        let number2 = parseFloat(document.getElementById("n2").value);
+        let chuVi = 2 * (number1 + number2);
+        document.getElementById("ketqua").innerText = "Chu Vi là " + chuVi;
+    }
+
+    function tinhDienTich() {
+        let number3 = parseFloat(document.getElementById("n3").value);
+        let number4 = parseFloat(document.getElementById("n4").value);
+        let dienTich = number3 * number4;
+        document.getElementById("dapan").innerText = "Diện Tích là " + dienTich;
+    }
+</script>
+</body>
+</html>
