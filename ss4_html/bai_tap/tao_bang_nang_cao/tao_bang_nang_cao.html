@@ -18,21 +18,70 @@
             border-collapse: collapse;
         }
 
-        table {
+        .table1 {
             background: orange;
             border-collapse: collapse;
-            border: 2px solid black;
+            border: 1px solid black;
         }
 
         .groupcol {
             width: 30px;
             height: 40px;
-            text-align: right;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .table2 {
+            border-collapse: collapse;
+            font-family: "Arial", sans-serif;
+            font-size: 20px;
+            width: 50%;
+        }
+
+        .table2 th {
+            background: orange;
+            color: white;
+            border-collapse: separate;
+            border: 2px solid white;
+
+        }
+
+        .trtable2 {
+            border-collapse: collapse;
+            border-spacing: 10px;
+            padding: 10px;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        .tdtable2 {
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .table2 td {
+            border-collapse: collapse;
+            border: 3px solid darkgrey;
+        }
+
+        .sat {
+            color: blue;
+        }
+
+        .sun {
+            color: red;
+        }
+
+        .subnumber {
+            color: black;
+            vertical-align: sub;
+            font-size: 15px;
         }
     </style>
 </head>
 <body>
-<table>
+<table class="table1">
     <tr>
         <th>&nbsp;</th>
         <th>1</th>
@@ -151,7 +200,74 @@
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-
 </table>
+<div>
+    <table class="table2">
+        <h2 style="color: blue; margin-left: 280px">Tháng 10 - October</h2>
+        <tr class="trtable2">
+            <th style="background: red; color:white;">C.Nhật</th>
+            <th>T.Hai</th>
+            <th>T.Ba</th>
+            <th>T.Tư</th>
+            <th>T.Năm</th>
+            <th>T.Sáu</th>
+            <th style="background: blue; color: white;">T.Bảy</th>
+        </tr>
+        <tr class="trtable2">
+            <td style="border:white" ; class="sun">Sun</td>
+            <td style="border: white">Mon</td>
+            <td style="border: white">Tue</td>
+            <td style="border: white">Wed</td>
+            <td style="border: white">Thu</td>
+            <td style="border: white">Fri</td>
+            <td style="border: white">Sat</td>
+        </tr>
+        <tr class="tdtable2">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>1<sub class="subnumber">13</sub></td>
+            <td>2<sub class="subnumber">14</sub></td>
+            <td class="sat">3<sub class="subnumber">15</sub></td>
+        </tr>
+        <tr class="tdtable2">
+            <td class="sun">4<sub class="subnumber">16</sub></td>
+            <td>5<sub class="subnumber">17</sub></td>
+            <td>6<sub class="subnumber">18</sub></td>
+            <td>7<sub class="subnumber">19</sub></td>
+            <td>8<sub class="subnumber">20</sub></td>
+            <td>9<sub class="subnumber">21</sub></td>
+            <td class="sat">10<sub class="subnumber">22</sub></td>
+        </tr>
+        <tr class="tdtable2">
+            <td class="sun">11<sub class="subnumber">23</sub></td>
+            <td>12<sub class="subnumber">24</sub></td>
+            <td>13<sub class="subnumber">25</sub></td>
+            <td>14<sub class="subnumber">26</sub></td>
+            <td>15<sub class="subnumber">27</sub></td>
+            <td>16<sub class="subnumber">28</sub></td>
+            <td class="sat">17<sub class="subnumber">29</sub></td>
+        </tr>
+        <tr class="tdtable2">
+            <td class="sun">18<sub class="subnumber">1.9</sub></td>
+            <td>19<sub class="subnumber">2</sub></td>
+            <td>20<sub class="subnumber">3</sub></td>
+            <td>21<sub class="subnumber">4</sub></td>
+            <td>22<sub class="subnumber">5</sub></td>
+            <td>23<sub class="subnumber">6</sub></td>
+            <td class="sat">24<sub class="subnumber">7</sub></td>
+        </tr>
+        <tr class="tdtable2">
+            <td class="sun">25<sub class="subnumber">8</sub></td>
+            <td>26<sub class="subnumber">9</sub></td>
+            <td>27<sub class="subnumber">10</sub></td>
+            <td>28<sub class="subnumber">11</sub></td>
+            <td>29<sub class="subnumber">12</sub></td>
+            <td>30<sub class="subnumber">13</sub></td>
+            <td class="sat">31<sub class="subnumber">14</sub></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
