@@ -21,16 +21,16 @@
 <button onclick="tinhDienTich();">Kết Quả</button>
 <script>
     function tinhChuVi() {
-        let number1 = parseFloat(document.getElementById("n1").value);
-        let number2 = parseFloat(document.getElementById("n2").value);
-        let chuVi = 2 * (number1 + number2);
+        let chieuDai = parseFloat(document.getElementById("n1").value);
+        let chieuRong = parseFloat(document.getElementById("n2").value);
+        let chuVi = 2 * (chieuDai + chieuRong);
         document.getElementById("ketqua").innerText = "Chu Vi là " + chuVi;
     }
 
     function tinhDienTich() {
-        let number3 = parseFloat(document.getElementById("n3").value);
-        let number4 = parseFloat(document.getElementById("n4").value);
-        let dienTich = number3 * number4;
+        let chieuDai = parseFloat(document.getElementById("n3").value);
+        let chieuRong = parseFloat(document.getElementById("n4").value);
+        let dienTich = chieuDai * chieuRong;
         document.getElementById("dapan").innerText = "Diện Tích là " + dienTich;
     }
 </script>
