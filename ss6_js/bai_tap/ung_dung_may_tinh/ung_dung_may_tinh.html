@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<div><h2>Caculator</h2></div>
+<form>
+    <input type="number" placeholder="Nhập số" value="number1" id="number1">
+    <input type="number" placeholder="Nhập số" value="number2" id="number2">
+    <div>
+        <button type="button" onclick="addiTion()"> Addition(+)</button>
+        <button type="button" onclick="subTracTion()"> Subtraction(-)</button>
+        <button type="button" onclick="multiPliCaTion()"> Multiplecation(*)</button>
+        <button type="button" onclick="diviSion()"> Division(/)</button>
+    </div>
+    <p id="result"></p>
+</form>
+<script>
+    function addiTion() {
+        let number1 = parseFloat(document.getElementById("number1").value)
+        ;
+        let number2 = parseFloat(document.getElementById("number2").value)
+        ;
+        let addition = number1 + number2;
+        document.getElementById("result").innerText = `Tổng là: ${addition}`;
+    }
+
+    function subTracTion() {
+        let number1 = parseFloat(document.getElementById("number1").value)
+        ;
+        let number2 = parseFloat(document.getElementById("number2").value)
+        ;
+        let subtraction = number1 - number2;
+        document.getElementById("result").innerText = `Hiệu là: ${subtraction}`;
+    }
+
+    function multiPliCaTion() {
+        let number1 = parseFloat(document.getElementById("number1").value)
+        ;
+        let number2 = parseFloat(document.getElementById("number2").value)
+        ;
+        let multiplication = number1 * number2;
+        document.getElementById("result").innerText = `Tích là: ${multiplication}`;
+    }
+
+    function diviSion() {
+        let number1 = parseFloat(document.getElementById("number1").value)
+        ;
+        let number2 = parseFloat(document.getElementById("number2").value)
+        ;
+        let division = number1 / number2;
+        document.getElementById("result").innerText = `Thương là: ${division}`;
+    }
+
+</script>
+</body>
+</html>

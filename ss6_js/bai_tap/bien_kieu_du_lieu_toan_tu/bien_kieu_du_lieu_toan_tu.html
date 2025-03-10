@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<form>
+    <div>
+        <h2> Điểm trung bình</h2>
+        <label>Vật lý</label>
+        <input type="number" id="physics" placeholder="Nhập điểm số" value="physics">
+    </div>
+    <div>
+        <label>Hóa học</label>
+        <input type="number" id="chemistry" placeholder="Nhập điểm số" value="chemistry">
+    </div>
+    <div>
+        <label>Vật lý</label>
+        <input type="number" id="maths" placeholder="Nhập điểm số" value="maths">
+    </div>
+    <div>
+        <button type="button" onclick="average()">Average Score</button>
+        <p id="result"></p>
+    </div>
+</form>
+<script>
+    function average() {
+        let physics = parseFloat(document.getElementById("physics").value);
+        let chemistry = parseFloat(document.getElementById("chemistry").value);
+        let maths = parseFloat(document.getElementById("maths").value);
+        let total = physics + chemistry + maths
+        let average = total / 3;
+        document.getElementById("result").innerText = `Điểm Trung Bình Cộng: ${average} Điểm tổng: ${total}`
+    }
+</script>
+<div>
+    <h2>Đổi độ F</h2>
+    <input type="number" placeholder="Độ c(Celsius)" id="celsius">
+    <button type="button" onclick="changeF()">Change</button>
+    <p id="resultf"></p>
+</div>
+<script>
+    function changeF() {
+        let celsius = parseFloat(document.getElementById("celsius").value);
+        let changef = (celsius * 9 / 5) + 32;
+        document.getElementById("resultf").innerText = `Độ F = ${changef}`;
+    }
+</script>
+
+<div>
+    <h2>Diện Tích và Chu Vi Hình Tròn</h2>
+    <input type="number" placeholder="Bán Kính" id="radius">
+    <button type="button" onclick="circumferenceOfCircle()">Chu Vi</button>
+    <button type="button" onclick="circularArea()">Diện Tích</button>
+    <p id="circumference"></p>
+    <p id="area"></p>
+</div>
+<script>
+    const PI = 3.14159;
+
+    function circumferenceOfCircle() {
+        let radius = parseFloat(document.getElementById("radius").value);
+        let circumference = PI * radius * 2;
+        document.getElementById("circumference").innerText = `Chu Vi Hình Tròn = ${circumference}`;
+    }
+
+    function circularArea() {
+        let radius = parseFloat(document.getElementById("radius").value);
+        let area = PI * (radius ** 2);
+        document.getElementById("area").innerText = `Diện Tích Hình Tròn = ${area}`;
+    }
+</script>
+</body>
+</html>

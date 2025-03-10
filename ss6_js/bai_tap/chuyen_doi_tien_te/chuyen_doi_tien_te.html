@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form>
+        <div>
+            <label>Amount</label>
+            <label style="margin-left: 110px"> From Currency To Currency</label>
+        </div>
+        <input type="number" id="amount" placeholder="Nhập số tiền cần đổi">
+        <select id="tradeUsd">
+            <option value="vietnam">VietNam</option>
+            <option value="usd">USD</option>
+        </select>
+        <select id="tradeVnd">
+            <option value="usd">USD</option>
+            <option value="vietnam">VietNam</option>
+        </select>
+        <button type="button" onclick="convert();">Convert</button>
+        <div><p id="result"></p></div>
+    </form>
+    <script>
+        function convert() {
+            let amount = parseFloat(document.getElementById("amount").value);
+            let tradeUsd = document.getElementById("tradeUsd").value;
+            let tradeVnd = document.getElementById("tradeVnd").value;
+            if (tradeUsd == "vietnam" && tradeVnd == "usd") {
+                let usd = amount * 0.0000438;
+                document.getElementById("result").innerText = " USD: " + usd;
+            } else if (tradeUsd == "usd" && tradeVnd == "vietnam") {
+                let vnd = amount * 23800;
+                document.getElementById("result").innerText = " VND: " + vnd;
+            } else {
+                document.getElementById("result").innerText = " Result: " + amount;
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
