@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<h2>Xác Định Một Hình Tam Giác</h2>
+<input type="number" id="triangleEdgeOne" placeholder="Nhập số cạnh">
+<input type="number" id="triangleEdgeTwo" placeholder="Nhập số cạnh">
+<input type="number" id="triangleEdgeThree" placeholder="Nhập số cạnh">
+<button type="button" onclick="checkTriangle()">Kết Quả</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function checkTriangle() {
+        let a = parseFloat(document.getElementById("triangleEdgeOne").value);
+        let b = parseFloat(document.getElementById("triangleEdgeTwo").value);
+        let c = parseFloat(document.getElementById("triangleEdgeThree").value);
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            document.getElementById("result").innerText = `Nhập đủ số cạnh`;
+        } else if (a > 0 && b > 0 && c > 0) {
+            if (a + b > c && b + c > a && c + a > b) {
+                document.getElementById("result").innerText = `Đây là một hình tam giác`;
+            } else {
+                document.getElementById("result").innerText = `Đây không phải là một hình tam giác`;
+            }
+        } else {
+            document.getElementById("result").innerText = `Đây không phải là một hình tam giác`;
+        }
+    }
+</script>
+</body>
+</html>

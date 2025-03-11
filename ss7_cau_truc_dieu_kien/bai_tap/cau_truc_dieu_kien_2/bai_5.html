@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<h2>Diện tích hình tam giác vuông</h2>
+<input type="number" id="triangelEdgeOne" placeholder="Nhập cạnh kề (m)">
+<input type="number" id="triangelEdgeTwo" placeholder="Nhập cạnh kề (m)">
+<button type="button" onclick="acreageOfRectangle()">Kết Quả</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function acreageOfRectangle() {
+        let edgeone = parseFloat(document.getElementById("triangelEdgeOne").value);
+        let edgetwo = parseFloat(document.getElementById("triangelEdgeTwo").value);
+        if (isNaN(length) && isNaN(width)) {
+            document.getElementById("result").innerText = `Nhập chiều dài hai cạnh kề`;
+        } else {
+            document.getElementById("result").innerText = `Diện Tích Tam Giác Vuông= ${edgeone * edgetwo / 2}m2`;
+        }
+    }
+</script>
+</body>
+</html>

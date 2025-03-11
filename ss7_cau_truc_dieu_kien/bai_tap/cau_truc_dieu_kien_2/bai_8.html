@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<h2>Xác Định Tuổi</h2>
+<input type="number" id="yearOld" placeholder="Nhập Tuổi">
+<button type="button" onclick="checkAge()">Check</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function checkAge() {
+        let age = parseFloat(document.getElementById("yearOld").value);
+        if (isNaN(age)) {
+            document.getElementById("result").innerText = `Nhập Tuổi`;
+        } else if (Number.isInteger(age) && age > 0 && age < 120) {
+            document.getElementById("result").innerText = `Đây là tuổi của một người`;
+        } else {
+            document.getElementById("result").innerText = `Đây không phải là tuổi của một người`;
+        }
+    }
+</script>
+</body>
+</html>

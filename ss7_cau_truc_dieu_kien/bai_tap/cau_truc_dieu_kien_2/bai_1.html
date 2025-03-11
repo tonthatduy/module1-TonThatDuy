@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<h2>Chuyển từ độ C sang độ F</h2>
+<input type="number" id="celsius" placeholder="Nhập độ C">
+<button type="button" onclick="changeCelsius()">Change</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function changeCelsius() {
+        let celsius = parseFloat(document.getElementById("celsius").value);
+        if (isNaN(celsius)) {
+            document.getElementById("result").innerText = `Nhập giá trị độ C`;
+        } else {
+            document.getElementById("result").innerText = `Giá trị độ C: ${celsius * (9 / 5) + 32}`;
+        }
+    }
+</script>
+</body>
+</html>

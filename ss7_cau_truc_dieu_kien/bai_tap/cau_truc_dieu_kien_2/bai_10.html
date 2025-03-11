@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<h2> Tính Giá Điện </h2>
+<input type="number" id="electricLetter" placeholder="Nhập Chữ Điện">
+<button type="button" onclick="kiloWattHour()">Tra Cứu</button>
+<p id="result"> Tiền Điện ở đây</p>
+<script>
+    // Bậc 1: tiêu thụ <50kWh giá 1900 VNĐ
+    // Bậc 2: tiêu thụ <100kWh giá 2100 VNĐ
+    // Bậc 3: tiêu thụ <200kWh giá 2300 VNĐ
+    // Bậc 4: tiêu thụ <300kWh giá 2500 VNĐ
+    // Bậc 5: tiêu thụ >300kWh giá 3000 VNĐ
+    function kiloWattHour() {
+        let letter = parseFloat(document.getElementById("electricLetter").value);
+        if (isNaN(letter)) {
+            document.getElementById("result").innerText = `Nhập Chữ Điện`;
+        } else if (letter <= 50) {
+            document.getElementById("result").innerText = `Tiền Điện: ${1900 * letter} VNĐ`;
+        } else if (letter <= 100) {
+            document.getElementById("result").innerText = `Tiền Điện: ${(1900 * 50) + (2100 * (letter - 50))}VNĐ`;
+        } else if (letter <= 200) {
+            document.getElementById("result").innerText = `Tiền Điện: ${(1900 * 50) + (2100 * 50) + (2300 * (letter - 100))}VNĐ`;
+        } else if (letter <= 300) {
+            document.getElementById("result").innerText = `Tiền Điện: ${(1900 * 50) + (2100 * 50) + (2300 * 100) + (2500 * (letter - 200))}VNĐ`;
+        } else {
+            document.getElementById("result").innerText = `Tiền Điện: ${(1900 * 50) + (2100 * 50) + (2300 * 100) + (2500 * 200) + (3000 * (letter - 300))}VNĐ`;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<div>
+    <h2>Giải Phường Trình Bậc 2</h2>
+</div>
+<form>
+    <input type="number" placeholder="Nhập số a" id="numberOne">
+    <input type="number" placeholder="Nhập số b" id="numberSecond">
+    <input type="number" placeholder="Nhập số c" id="numberThree">
+    <button type="button" onclick="quadraticEquation()">Kiểm Tra</button>
+    <p id="result">Hiển Thị Kết Quả ở đây</p>;
+</form>
+<script>
+    function quadraticEquation() {
+        let a = parseFloat(document.getElementById("numberOne").value);
+        let b = parseFloat(document.getElementById("numberSecond").value);
+        let c = parseFloat(document.getElementById("numberThree").value);
+        let delta = (b ** 2) - 4 * a * c;
+        let x1 = (-b + Math.sqrt(delta)) / 2 * a;
+        let x2 = (-b - Math.sqrt(delta)) / 2 * a;
+        let x = -b / 2 * a;
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            document.getElementById("result").innerText = `Nhập lại đầy đủ số`;
+            return;
+        }
+
+        if (a !== 0) {
+            if (delta > 0) {
+                document.getElementById("result").innerText = `Phương trình có 2 nghiệm: ${x1} và ${x2}`;
+            } else if (delta == 0) {
+                document.getElementById("result").innerText = `Phương trình có nghiệm kép: ${x}`;
+            } else {
+                document.getElementById("result").innerText = `Phương trình vô nghiệm`;
+            }
+        } else if (b == 0) {
+            if (c == 0) {
+                document.getElementById("result").innerText = `Phương trình vô số nghiệm`;
+            } else {
+                document.getElementById("result").innerText = `Phương trình vô nghiệm`;
+            }
+        } else {
+            document.getElementById("result").innerText = `Phương trình trả về bậc nhất có nghiệm: ${-c / b}`;
+        }
+
+    }
+</script>
+</body>
+</html>

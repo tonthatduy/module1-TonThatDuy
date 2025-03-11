@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<h2>Diện tích hình vuông</h2>
+<input type="number" id="square" placeholder="Nhập Cạnh Vuông(m)">
+<button type="button" onclick="acreage()">Kết Quả</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function acreage() {
+        let square = parseFloat(document.getElementById("square").value);
+        if (isNaN(square)) {
+            document.getElementById("result").innerText = `Nhập Cạnh Vuông`;
+        } else {
+            document.getElementById("result").innerText = `Diện Tích = ${square ** 2}m2`;
+        }
+    }
+</script>
+</body>
+</html>

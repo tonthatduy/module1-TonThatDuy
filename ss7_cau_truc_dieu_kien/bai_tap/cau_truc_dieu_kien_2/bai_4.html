@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<h2>Diện tích hình chữ nhật</h2>
+<input type="number" id="lengthOfRectangel" placeholder="Nhập Chiều Dài (m)">
+<input type="number" id="widthOfRectangel" placeholder="Nhập Chiều Rộng (m)">
+<button type="button" onclick="acreageOfRectangle()">Kết Quả</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function acreageOfRectangle() {
+        let length = parseFloat(document.getElementById("lengthOfRectangel").value);
+        let width = parseFloat(document.getElementById("widthOfRectangel").value);
+        if (isNaN(length) && isNaN(width)) {
+            document.getElementById("result").innerText = `Nhập chiều dài chiều rộng hình chữ nhật`;
+        } else {
+            document.getElementById("result").innerText = `Diện Tích Hình Chữ Nhật= ${length * width}m2`;
+        }
+    }
+</script>
+</body>
+</html>

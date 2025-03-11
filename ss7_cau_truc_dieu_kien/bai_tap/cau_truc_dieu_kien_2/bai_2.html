@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<h2>Chuyển từ Mét sang Feet</h2>
+<input type="number" id="meters" placeholder="Nhập mét">
+<button type="button" onclick="changeFeet()">Change</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function changeFeet() {
+        let met = parseFloat(document.getElementById("meters").value);
+        if (isNaN(met)) {
+            document.getElementById("result").innerText = `Nhập Giá Trị Mét`;
+        } else {
+            document.getElementById("result").innerText = `Ft = ${met * 3.2808}`;
+        }
+    }
+</script>
+</body>
+</html>
