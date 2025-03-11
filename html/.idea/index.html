@@ -7,21 +7,13 @@
     <title>Money Exchange</title>
 </head>
 <body>
+
 <script>
-    let person = {
-        firstName: "Jane",
-        lastName: "Doe",
-        get fullName() {
-            return `${this.firstName} ${this.lastName}`;
-        },
-        set fullName(name) {
-            [this.firstName, this.lastName] = name.split(' ');
-        }
-    };
-    console.log(person.fullName); // Jane Doe
-    person.fullName = "John Smith";
-    console.log(person.firstName); // John
-    console.log(person.lastName);  // Smith
+    let year = parseInt(prompt("Enter a year"));
+    let isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+
+    alert(year + (isLeapYear ? " is a leap year" : " is NOT a leap year"));
+
 </script>
 </body>
 </html>
