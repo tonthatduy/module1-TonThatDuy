@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<h2>Lãi Ngân Hàng</h2>
+<input type="number" id="initialMoney" placeholder="Nhập số Tiền ban đầu">
+<input type="number" id="interestRate" placeholder="Nhập Lãi Xuất(%/tháng) ">
+<input type="number" id="month" placeholder="Nhập số tháng gửi">
+<button type="button" onclick="bankInterest()">Kết Quả</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function bankInterest() {
+        let money = parseFloat(document.getElementById("initialMoney").value);
+        let interestrate = parseFloat(document.getElementById("interestRate").value);
+        let month = parseFloat(document.getElementById("month").value);
+        let bankinterest = money * (1 + interestrate / 100) ** month;
+        if (isNaN(money) || isNaN(interestrate) || isNaN(month) || money <= 0 || interestrate <= 0 || month <= 0) {
+            document.getElementById("result").innerText = `Vui Lòng Nhập số hợp lệ`;
+        } else {
+            document.getElementById("result").innerText = `Lãi của ${month} là: ${bankinterest.toLocaleString("vi-VN")} VNĐ`;
+        }
+    }
+</script>
+</body>
+</html>

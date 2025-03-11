@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<h2> Tính Giá Điện </h2>
+<input type="number" id="imcome" placeholder="Nhập Thu Nhập(triệu đồng)">
+<button type="button" onclick="personalIcome()">Tra Cứu</button>
+<p id="result"> Tiền Thuế ở đây</p>
+<script>
+    // Bậc 1: thu nhập <=5tr thuế 5%
+    // Bậc 2: 5tr<thu nhập <=10tr thuế 10%
+    // Bậc 3: 10tr<thu nhập <=18tr thuế 15%
+    // Bậc 4: 18tr<thu nhập <32tr thuế 20%
+    // Bậc 5: 32<thu nhập <=52tr thuế 25%
+    // Bậc 6: 52<thu nhập <=80tr thuế 30%
+    // Bậc 7: thu nhập >80tr thuế 35%
+    function personalIcome() {
+        let imcome = parseFloat(document.getElementById("imcome").value);
+        if (isNaN(imcome) || imcome < 0) {
+            document.getElementById("result").innerText = `Nhập lại thu nhập`;
+        } else if (imcome <= 5) {
+            document.getElementById("result").innerText = `Tiền Thuế: ${0.05 * imcome} Triệu Đồng`;
+        } else if (imcome <= 10) {
+            document.getElementById("result").innerText = `Tiền Thuế: ${0.1 * imcome} Triệu Đồng`;
+        } else if (imcome <= 18) {
+            document.getElementById("result").innerText = `Tiền Thuế: ${0.15 * imcome} Triệu Đồng`;
+        } else if (imcome <= 32) {
+            document.getElementById("result").innerText = `Tiền Thuế: ${0.2 * imcome} Triệu Đồng`;
+        } else if (imcome <= 52) {
+            document.getElementById("result").innerText = `Tiền Thuế: ${0.25 * imcome} Triệu Đồng`;
+        } else if (imcome <= 80) {
+            document.getElementById("result").innerText = `Tiền Thuế: ${0.3 * imcome} Triu Đồng`;
+        } else {
+            document.getElementById("result").innerText = `Tiền Thuế: ${0.35 * imcome} Triệu Đồng`;
+        }
+    }
+</script>
+</body>
+</html>
