@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<form>
+    <h2> Điểm bài kiểm tra</h2>
+    <input type="number" placeholder="Nhập điểm" id="scoreOne">
+    <h2> Điểm thi giữa kỳ</h2>
+    <input type="number" placeholder="Nhập điểm" id="scoreTwo">
+    <h2> Đểm thi cuối kỳ</h2>
+    <input type="number" placeholder="Nhập điểm" id="scoreThree">
+    <button type="button" onclick="lookUpScore()">Tra cứu điểm</button>
+    <p id="result"> Học lực hiện ở đây</p>
+</form>
+<script>
+    function lookUpScore() {
+        let scoreone = parseFloat(document.getElementById("scoreOne").value);
+        let scoretwo = parseFloat(document.getElementById("scoreTwo").value);
+        let scorethree = parseFloat(document.getElementById("scoreThree").value);
+        let averagescore = (scoreone + scoretwo + scorethree) / 3;
+        if (isNaN(scoreone) || isNaN(scoretwo) || isNaN(scorethree)) {
+            document.getElementById("result").innerText = `Nhập đẩy đủ điểm số`;
+            return;
+        }
+        if (averagescore >= 8.0) {
+            document.getElementById("result").innerText = `Điểm trung bình: ${averagescore} Học lực Giỏi`;
+        } else if (averagescore >= 6.5) {
+            document.getElementById("result").innerText = `Điểm trung bình: ${averagescore} Học lực Khá`;
+        } else if (averagescore >= 5.0) {
+            document.getElementById("result").innerText = `Điểm trung bình ${averagescore} Học lực Trung Bình`;
+        } else {
+            document.getElementById("result").innerText = `Điểm trung bình ${averagescore} Học lực Yếu`;
+        }
+    }
+</script>
+</body>
+</html>

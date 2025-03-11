@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<h2> Cước Điện Thoại </h2>
+<input type="number" id="minute" placeholder="Nhập Số Phút Gọi">
+<button type="button" onclick="callMinute()">Tra Cứu</button>
+<p id="result"> Tiền cước ở đây</p>
+<script>
+    // Thuê bao cố định: 50000
+    // 1200VNĐ/Phút(dưới bằng 50p)
+    // 800VNĐ/Phút(dưới bằng 100p)
+    // 500VNĐ/Phút(trên 100p)
+    function callMinute() {
+        let minute = parseFloat(document.getElementById("minute").value);
+        if (isNaN(minute)) {
+            document.getElementById("result").innerText = `Nhập số phút`;
+            return;
+        }
+        if (minute <= 50) {
+            document.getElementById("result").innerText = `Tiền Cước: ${(1200 * minute) + 50000} VNĐ`;
+        } else if (minute <= 100) {
+            document.getElementById("result").innerText = `Tiền Cước: ${(1200 * 50) + 50000 + (800 * (minute - 50))}VNĐ`;
+        } else {
+            document.getElementById("result").innerText = ` Tiền Cước: ${(1200 * 50) + 50000 + (800 * 50) + (500 * (minute - 100))}VNĐ`;
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
