@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Chỉ Số Cân Nặng Của Cơ Thể</title>
+</head>
+<body>
+<script>
+    let weight = parseFloat(prompt("Cân Nặng"), '');
+    let height = parseFloat(prompt("Chiều Cao"), '');
+    let bodyMassIndex = weight / (height ** 2);
+    if (bodyMassIndex < 18.5) {
+        alert("Underweight");
+    } else if (bodyMassIndex < 25.0) {
+        alert("Normal");
+    } else if (bodyMassIndex < 30.0) {
+        alert("Overweight");
+    } else {
+        alert("Obese");
+    }
+</script>
+
+</body>
+</html>

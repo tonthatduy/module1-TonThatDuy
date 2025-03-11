@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch-Case</title>
+</head>
+<body>
+<form>
+    <div><h2>Tính số ngày trong tháng</h2></div>
+    <input type="number" placeholder="Nhập Tháng" id="month">
+    <button type="button" onclick="checkDate()">Tính số ngày</button>
+    <p id="result"></p>
+</form>
+<script>
+    function checkDate() {
+        let month = +document.getElementById("month").value
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("result").innerText = `Tháng ${month} có 31 ngày`;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("result").innerText = `Tháng ${month} có 30 ngày`;
+                break;
+            case 2:
+                document.getElementById("result").innerText = `Tháng ${month} có 28 và 29 ngày`;
+                break;
+            default:
+                document.getElementById("result").innerText = "Vui lòng nhập lại tháng";
+        }
+    }
+</script>
+</body>
+</html>
