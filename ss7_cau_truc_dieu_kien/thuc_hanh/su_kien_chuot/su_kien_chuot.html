@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img width="100px" id="myImage"
+         src="https://bizweb.dktcdn.net/100/419/791/files/bong-chuyen-cao-su-pvc-so-5-vfc3000-2.jpg?v=1695698643729">
+    <p>Click button below to move the image to right</p>
+    <input onclick="moveRight();" type="button" value="Click Me"/>
+</form>
+<script>
+    let imgObj = null;
+    imgObj = document.getElementById("myImage");
+
+    function init() {
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '0px';
+    }
+
+    function moveRight() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+    }
+
+    window.onload = init;
+</script>
+
+
+</body>
+</html>

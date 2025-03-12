@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự Kiện Bàn Phím</title>
+</head>
+<body onload="docReady()">
+<img id="volleyBall" width="100"
+     src="https://bizweb.dktcdn.net/100/419/791/files/bong-chuyen-cao-su-pvc-so-5-vfc3000-2.jpg?v=1695698643729">
+<script>
+    let volleyball = document.getElementById("volleyBall");
+    volleyball.style.position = 'absolute';
+    volleyball.style.top = '0px';
+    volleyball.style.left = '0px';
+
+    function upArrowPressed() {
+        volleyball.style.top = parseInt(volleyball.style.top) - 5 + 'px';
+    }
+
+    function downArrowPressed() {
+        volleyball.style.top = parseInt(volleyball.style.top) + 5 + 'px';
+    }
+
+    function leftArrowPressed() {
+        volleyball.style.left = parseInt(volleyball.style.left) - 5 + 'px';
+    }
+
+    function rightArrowPressed() {
+        volleyball.style.left = parseInt(volleyball.style.left) + 5 + 'px';
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>
