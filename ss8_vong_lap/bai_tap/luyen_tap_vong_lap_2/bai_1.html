@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let f1 = 1;
+    let f0 = 0;
+    let fi = 0;
+    let result = "0 <br> 1";
+    let n = +prompt("Nhập số")
+    let i = 3;
+    // for (let i = 3; i <= n; i++) {
+    //     fi = f0 + f1;
+    //     result += "<br> " + fi;
+    //     f0 = f1;
+    //     f1 = fi;
+    // }
+    // // console.log(result)
+    // document.write(result);
+    while (i <= n) {
+        fi = f0 + f1;
+        result += "<br>" + fi;
+        f0 = f1;
+        f1 = fi;
+        i++
+    }
+    document.write(result)
+</script>
+</body>
+</html>

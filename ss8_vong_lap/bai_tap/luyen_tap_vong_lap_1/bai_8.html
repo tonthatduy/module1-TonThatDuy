@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<h2> Hãy Thử Đoán Xem</h2>
+<button type="button" onclick="duDoanSo()">Chơi</button>
+<script>
+    function duDoanSo() {
+        let duDoan = +prompt("Nhập khoảng bạn muốn đoán: ");
+        let ngauNhien = Math.floor(Math.random() * (duDoan + 1));
+        let so = 0;
+        let count = 0;
+        do {
+            so = +prompt("Nhận số bạn đoán");
+            if (so < ngauNhien) {
+                alert("Số bạn vừa nhập bé hơn số trúng thưởng");
+            }
+            if (so > ngauNhien) {
+                alert("Số bạn vừa nhập lớn hơn số trúng thưởng");
+            }
+            if (so == ngauNhien) {
+                alert("Chúc Mừng Bạn Đoán Đúng");
+                break;
+            }
+            count++;
+            if (count >= 3) {
+                alert("Bạn đã hết lượt đoán");
+            }
+        } while (count < 3);
+    }
+</script>
+
+</body>
+</html>

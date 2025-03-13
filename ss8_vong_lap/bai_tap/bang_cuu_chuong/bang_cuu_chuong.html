@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng cửu chương</title>
+</head>
+<body>
+<h2>Bảng Cửu Chương</h2>
+
+<script>
+    // Thử nghiệm với For
+    // let so, i, j;
+    // so = "<table border='1' width='300' cellspacing='0' cellpadding='15'>";
+    // for (i = 1; i < 10; i++) {
+    //     so = so + "<tr>";
+    //     for (j = 2; j < 10; j++) {
+    //         so = so + "<td>" + j + "*" + i + "=" + i * j + "</td>";
+    //     }
+    //     so = so + "</tr>";
+    // }
+    // so = so + "</table>";
+    // document.write(so);
+    // Thử nghiệm với While
+    let so, i, j;
+    so = "<table border='1' width='300' cellspacing='0' cellpadding='15'>";
+    i = 1;
+    j = 2;
+    while (i < 10) {
+        so = so + "<tr>";
+        while (j < 10) {
+            so = so + "<td>" + j + "*" + i + "=" + i * j + "</td>";
+            j++;
+        }
+        so = so + "</tr>";
+        j = 2;
+        i++;
+    }
+    so = so + "</table>";
+    document.write(so);
+</script>
+</body>
+</html>

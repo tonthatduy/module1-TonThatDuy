@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let nhietDo;
+    do {
+        if (nhietDo < 20) {
+            alert("Người dùng tăng nhiệt độ");
+        }
+        if (nhietDo > 100) {
+            alert("Người dùng giảm nhiệt độ")
+        }
+        nhietDo = prompt("Nhập Nhiệt Độ");
+    } while (nhietDo < 20 || nhietDo > 100);
+    document.write("Thông tin nhiệt độ hiện tại: " + nhietDo);
+</script>
+</body>
+</html>

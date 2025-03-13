@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số Nguyên</title>
+</head>
+<body>
+<script>
+    // số nguyên tố từ số 2
+    let n = 2;
+    // số lượng nguyên tố đã tìm thấy.
+    let soluongSNT = 0;
+    while (soluongSNT < 20) {
+        // biến count đếm số lượng ước số của n
+        let count = 0;
+        // vòng lặp for để kiểm tra số 1 đến n để xem n chia hết bao nhiêu số
+        for (let i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+        // nếu count == 2 tức là n chỉ chia hết cho 1 và chính nó
+        if (count == 2) {
+            soluongSNT++;
+            document.write(n + "<br>");
+        }
+        // hết các điều kiện vòng lặp trên tăng n lên để kiểm tra tiếp theo
+        n++;
+    }
+</script>
+</body>
+</html>

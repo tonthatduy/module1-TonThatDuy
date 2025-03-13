@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let f1 = 1;
+    let f0 = 0;
+    let fi = 0;
+    let result = "0 1";
+    for (let i = 3; i <= 20; i++) {
+        fi = f0 + f1;
+        result += " " + fi;
+        f0 = f1;
+        f1 = fi;
+
+        if (fi % 5 == 0) {
+            console.log(fi);
+            break;
+        }
+    }
+    document.write(fi);
+</script>
+
+</body>
+</html>
