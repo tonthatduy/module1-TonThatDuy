@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hình Trái Tim</title>
+  <style>
+    pre {
+      font-family: monospace;
+      line-height: 1.2;
+    }
+  </style>
+</head>
+<body>
+<pre id="heart"></pre>
+
+<script>
+  function drawHeart() {
+    let rows = 6;
+    let pattern = "";
+    let n = rows / 2;
+
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j <= 4 * n; j++) {
+        if ((j >= n - i && j <= n + i) || (j >= 3 * n - i && j <= 3 * n + i)) {
+          pattern += "*";
+        } else {
+          pattern += " ";
+        }
+      }
+      pattern += "\n";
+    }
+
+    for (let i = 0; i < n * 2; i++) {
+      for (let j = 0; j <= 4 * n; j++) {
+        if (j >= i && j <= 4 * n - i) {
+          pattern += "*";
+        } else {
+          pattern += " ";
+        }
+      }
+      pattern += "\n";
+    }
+
+    document.getElementById("heart").innerText = pattern;
+  }
+
+  drawHeart();
+</script>
+</body>
+</html>
