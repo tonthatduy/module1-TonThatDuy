@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực Hành</title>
+</head>
+<body>
+<script>
+    let exit = false;
+    while (!exit) {
+        let danhSach = prompt("-----Quản lý sinh viên -------\n"
+            + "Hãy nhập số để chọn đồ uống\n"
+            + "1.Hiển thị danh sách sinh viên \n"
+            + "2.Thêm mới sinh viên\n"
+            + "3.Xóa sinh viên\n"
+            + "4.Kết thúc chương trình")
+        switch (danhSach) {
+            case "1":
+                alert("Hiển thị danh sách sinh viên");
+                break;
+            case "2":
+                alert("Thêm mới sinh viên");
+                break;
+            case "3":
+                alert("Xóa sinh viên");
+                break4
+            case "4":
+                let confirmMessage = window.confirm("Ban co muon thoat");
+                if (confirmMessage) {
+                    alert("Ket thuc chuong trinh");
+                    exit = true;
+                }
+        }
+    }
+
+
+</script>
+</body>
+</html>
