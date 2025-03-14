@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<h2>Lãi Ngân Hàng</h2>
+<input type="number" id="initialMoney" placeholder="Nhập số Tiền ban đầu">
+<input type="number" id="interestRate" placeholder="Nhập Lãi Xuất(%/tháng) ">
+<input type="number" id="month" placeholder="Nhập số tháng gửi">
+<button type="button" onclick="bankInterest()">Kết Quả</button>
+<p id="result">Hiển thị kết quả ở đây</p>
+<script>
+    function bankInterest() {
+        let money = parseFloat(document.getElementById("initialMoney").value);
+        let interestrate = parseFloat(document.getElementById("interestRate").value);
+        let month = parseFloat(document.getElementById("month").value);
+        let bankinterest = money;
+        for (let i = 1; i <= month; i++) {
+            bankinterest += money * interestrate / 100;
+            money = bankinterest;
+        }
+        document.getElementById("result").innerText = ` Tổng của ${month} tháng là: ${bankinterest} VNĐ;`
+    }
+</script>
+</body>
+</html>
