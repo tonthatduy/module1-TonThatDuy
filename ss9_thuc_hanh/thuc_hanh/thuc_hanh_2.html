@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực Hành 2</title>
+</head>
+<body>
+<script>
+    let cafe = true;
+    let cacao = true;
+    let nuoccam = true;
+    let tongtien = 0;
+    let count = 1
+    let danhSach = "";
+    let stay = true;
+    do {
+
+        let n = +prompt("---------Menu---------- ---\n"
+            + "Hãy nhập số để chọn đồ uống\n"
+            + "1.Cafe:  10k\n"
+            + "2.Cacao:   15k\n"
+            + "3.Nước cam:   20k\n"
+            + "4.Kết thúc"
+            + "--------Danh sách đã chọn--------\n"
+            + `                                                          $Tổng tiền= ${tongtien} \n`
+            + `${danhSach}`
+        )
+        switch (n) {
+            case 1:
+                tongtien += 10;
+                if (cafe) {
+                    danhSach += count + ". Caphe\n";
+                    count++;
+                    cafe = false;
+                }
+                break;
+            case 2:
+                tongtien += 15;
+                if (cacao) {
+                    danhSach += count + ". Cacao\n";
+                    count++;
+                    cacao = false;
+                }
+                break;
+            case 3:
+                tongtien += 20;
+                if (nuoccam) {
+                    danhSach += count + ". Nước Cam\n";
+                    count++;
+                    nuoccam = false;
+                }
+                break;
+            case 4:
+                alert(`${danhSach} \n ${tongtien}`);
+                stay = false;
+                break;
+            default:
+                alert("Mời Nhập lại");
+        }
+    }
+    while (stay);
+
+</script>
+</body>
+</html>
