@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<h2> Tính UCLN và BCNN của 2 số </h2>
+<input id="numberOne" placeholder="Nhập số" type="number">
+<input id="numberSecond" placeholder="Nhập số" type="number">
+<button type="button" onclick="tinhUclnBcnn()">Check</button>
+<p id="ucln"> Ước chung lớn nhất hiện ở đây</p>
+<p id="bcnn"> Bội chung nhỏ nhất hiện ở đây</p>
+<script>
+    function tinhUclnBcnn() {
+        let a = parseInt(document.getElementById("numberOne").value);
+        let b = parseInt(document.getElementById("numberSecond").value);
+        let numberOne = a;
+        let numberSecond = b;
+        if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+            alert("Nhập lại số nguyên dương");
+            return;
+        }
+        while (b !== 0) {
+            let c = b
+            b = a % b;
+            a = c;
+        }
+        let ucln = a;
+        let bcnn = (numberOne * numberSecond) / ucln
+        document.getElementById("ucln").innerText = ` Ước chung lớn nhất: ${ucln}`
+        document.getElementById("bcnn").innerText = ` Bội chung nhỏ nhất: ${bcnn}`
+    }
+</script>
+</body>
+</html>

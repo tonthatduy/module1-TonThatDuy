@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let s = 15;
+    let n = +prompt("Nhập số nguyên dương");
+    for (let i = 1; i <= n; i++) {
+        let giaiThua = 1;
+        for (let j = 1; j <= i; j++) {
+            giaiThua *= j;
+        }
+        let sum;
+        if (i % 2 === 0) {
+            sum = 1 / giaiThua;
+        } else {
+            sum = -1 / giaiThua;
+        }
+        s += sum;
+    }
+    alert(`Tổng: ${s}`)
+</script>
+</body>
+</html>

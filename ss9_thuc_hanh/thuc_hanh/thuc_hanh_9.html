@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<h2>Nhập số m</h2>
+<input type="number" id="value">
+<button type="button" onclick="sumAndProduct()">Tính</button>
+<p id="sum"> Tổng hiện ở đây</p>
+<p id="product"> Tích hiện ở đây</p>
+<script>
+    function sumAndProduct() {
+        let m = parseInt(document.getElementById("value").value);
+        if (isNaN(m) || m < 0) {
+            alert("Vui lòng nhập một số nguyên dương");
+            return;
+        }
+        let soDu;
+        let sum = 0
+        let product = 1
+        if (m === 0) {
+            product = 0;
+        } else {
+            while (m > 0) {
+                soDu = m % 10;
+                sum += soDu;
+                product *= soDu;
+                m = Math.floor(m / 10);
+            }
+        }
+            document.getElementById("sum").innerText = `Tổng là ${sum}`;
+            document.getElementById("product").innerText = `Tích là ${product}`;
+    }
+</script>
+
+</body>
+</html>
