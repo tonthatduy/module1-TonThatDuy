@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let array = [];
+    while (n <= 0 || n >= 10) {
+        n = +prompt("Nhập lại độ dài bằng số Dương");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị mảng thứ " + i);
+    }
+    for (let i = 0; i < array.length - 1; i++) {
+        for (let j = 0; j < array.length - 1 - i; j++) {
+            if (array[j] < array[j + 1]) {
+                let temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+    alert(`Mảng sau khi sắp xếp giảm dần: ${array}`);
+</script>
+</body>
+</html>

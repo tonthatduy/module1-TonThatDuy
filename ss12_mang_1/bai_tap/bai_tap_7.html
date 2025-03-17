@@ -6,6 +6,32 @@
 </head>
 <body>
 <script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let array = [];
+    while (n <= 0 || n >= 10) {
+        n = +prompt("Nhập lại độ dài bằng số Dương");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị mảng thứ " + i);
+    }
+    let number = +prompt("Nhập một phần tử cần tìm");
+    let flag = false
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === number) {
+            flag = true;
+            for (let j = i; j < array.length - 1; j++) {
+                array[j] = array[j + 1];
+            }
+            array[array.length - 1] = 0;
+            i--;
+        }
+    }
+    if (flag) {
+        alert(`${number} in the array, new array: ${array}`);
+    } else {
+        alert(`${number} is not in the array`);
+    }
+
 
 </script>
 </body>
