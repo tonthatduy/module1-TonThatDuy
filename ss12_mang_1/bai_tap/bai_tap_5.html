@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập một chuỗi");
+    let arr = n.split("");
+    alert(arr);
+    let count = 0;
+    let array = ["u", "e", "o", "a", "i"];
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (array.includes(arr[i])) {
+    //         count++;
+    //     }
+
+    for (let i = 0; i < arr.length; i++) {
+      let flag = false;
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] === arr[i]) {
+                flag= true;
+                break;
+            }
+        }
+        if (flag){
+          count++;
+        }
+    }
+
+    alert(count);
+</script>
+</body>
+</html>

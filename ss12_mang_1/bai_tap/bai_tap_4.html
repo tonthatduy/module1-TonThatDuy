@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let array = [];
+    while (n <= 0) {
+        n = +prompt("Nhập lại số dương");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị mảng thứ " + i);
+    }
+    alert(array);
+    for (let i = 0; i < array.length / 2; i++) {
+        let result = array[i];
+        array[i] = array[array.length - i - 1];
+        array[array.length - i - 1] = result;
+    }
+    alert(array);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let resultArray = [];
+    let count = 0;
+    for (let i = 0; i < 10; i++) {
+        array[i] = +prompt("Nhập giá trị thứ " + i);
+        if (array[i] >= 10) {
+            count++;
+            resultArray.push(array[i]);
+        }
+    }
+    alert(`Có ${count} phần tử lớn hơn hoặc bằng 10:  ${resultArray} `);
+</script>
+</body>
+</html>

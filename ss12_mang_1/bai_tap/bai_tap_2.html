@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let index = -1;
+    for (let i = 0; i < 10; i++) {
+        array[i] = +prompt(" Nhập giá trị thứ " + i);
+    }
+    alert(array);
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (max < array[i]) {
+            max = array[i];
+            index = i;
+        }
+    }
+    alert(`Số lớn nhất có giá trị là: ${max} nằm ở vị trí ${index}`);
+</script>
+</body>
+</html>

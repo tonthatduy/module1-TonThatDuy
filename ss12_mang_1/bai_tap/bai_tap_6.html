@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài mảng");
+    let array = [];
+    while (n <= 0 || n >= 10) {
+        n = +prompt("Nhập lại độ dài bằng số Dương");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị mảng thứ " + i);
+    }
+    let number = +prompt("Nhập một phần tử cần tìm");
+    // if (array.includes(number)) {
+    //     alert(" V is in the array");
+    // } else {
+    //     alert(" V is not in the array");
+    // }
+    let flag = false;
+    for (let i = 0; i < array.length; i++) {
+        if (number === array[i]) {
+            flag = true;
+        }
+    }
+    if (flag) {
+        alert("V is in the array");
+    } else {
+        alert("V is not the array");
+    }
+</script>
+
+</body>
+</html>
