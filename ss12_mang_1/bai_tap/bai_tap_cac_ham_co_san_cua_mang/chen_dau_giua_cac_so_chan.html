@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let string = "025468";
+    let result = "";
+    for (let i = 0; i < string.length; i++) {
+        result += string[i];
+        if (parseInt(string[i]) % 2 === 0 &&
+            parseInt(string[i + 1]) % 2 === 0) {
+            result += "-";
+        }
+    }
+    alert(`${result}`);
+</script>
+</body>
+</html>
