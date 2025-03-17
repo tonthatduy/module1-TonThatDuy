@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 9</title>
 </head>
 <body>
-
+<script>
+    let a = +prompt("Nhập độ dài của mảng A");
+    while (a <= 0 || a >= 10) {
+        a = +prompt("Nhập lại độ dài bằng số Dương");
+    }
+    let b = +prompt("Nhập độ dài của mảng B");
+    while (b <= 0 || b >= 10) {
+        b = +prompt("Nhập lại độ dài bằng số Dương");
+    }
+    let arrayA = [];
+    let arrayB = [];
+    for (let i = 0; i < a; i++) {
+        arrayA[i] = +prompt("Nhập giá trị mảng A thứ " + i );
+    }
+    for (let i = 0; i < b; i++) {
+        arrayB[i] = +prompt("Nhập giá trị mảng B thứ " + i);
+    }
+    let arrayC = arrayB.concat(arrayA);
+    alert(`Mảng C : ${arrayC}`);
+</script>
 </body>
 </html>
