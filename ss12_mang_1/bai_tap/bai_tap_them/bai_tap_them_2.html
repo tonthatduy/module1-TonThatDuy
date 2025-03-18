@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài cho mảng");
+    let array = [];
+    while (n <= 0 || n >= 20) {
+        array = +prompt("Nhận lại số dương")
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị cho mảng thứ " + i);
+    }
+    alert(array);
+    let count = 0;
+    // let flag = false;
+    // for (let i = 0; i < array.length; i++) {
+    //     if (Math.sqrt(array[i]) % 1 === 0) {
+    // flag = true;
+    // count++;
+    // }
+    // }
+    for (let i = 0; i < array.length; i++) {
+        if (parseInt(Math.sqrt(array[i])) === Math.sqrt(array[i])) {
+            // flag = true
+            count++;
+        }
+        // if (flag) {
+        //     count++;
+        // }
+    }
+    alert(`Tổng các phần tử là số chính phương ${count}`);
+</script>
+</body>
+</html>

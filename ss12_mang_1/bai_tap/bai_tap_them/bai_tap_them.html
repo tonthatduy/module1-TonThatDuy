@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Thêm</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài cho mảng");
+    let array = [];
+    while (n <= 0 || n >= 20) {
+        array = +prompt("Nhận lại số dương")
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị cho mảng thứ " + i);
+    }
+    alert(array);
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (i % 2 === 0 && array[i] % 3 === 0) {
+            sum += array[i];
+        }
+    }
+    alert(`Tổng các phần tử ở vị trí chẵn và chia hết cho 3: ${sum}`);
+</script>
+</body>
+</html>

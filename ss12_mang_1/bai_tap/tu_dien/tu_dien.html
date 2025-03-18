@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<script>
+    let arrayEnglish = ["banana", "orange", "apple", "hello", "goodbye"];
+    let arrayVietnamese = ["chuối", "cam", "táo", "xin chào", "tạm biệt"];
+    let wordInput = prompt("Nhập từ cần tìm")
+    let index = arrayEnglish.indexOf(wordInput)
+    if (index !== -1) {
+        alert(`${arrayVietnamese[index]}`);
+    } else {
+        alert(`Không tìm thấy`);
+    }
+</script>
+</body>
+</html>
