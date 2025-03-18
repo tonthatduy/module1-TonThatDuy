@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập Chuỗi");
+    let word = str.trim().split(" ");
+    let count = 0;
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] !== "") {
+            count++;
+        }
+    }
+    alert(` Chuỗi : ${str} \n Số ký tự trong chuỗi ${count}`);
+</script>
+</body>
+</html>
