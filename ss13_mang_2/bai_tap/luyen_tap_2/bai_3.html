@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let array = [];
+    let number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let count = 0;
+    while (n <= 0) {
+        array = +prompt("Nhập lại số dương");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị của mảng thứ " + i);
+        if (number.includes(array[i])) {
+            count++;
+        }
+    }
+    alert(array);
+    alert(count);
+
+
+</script>
+</body>
+</html>
