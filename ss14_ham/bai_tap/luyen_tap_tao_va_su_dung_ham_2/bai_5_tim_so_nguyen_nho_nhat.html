@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    function minNumber(a, b, c) {
+        if (a < b && a < c) {
+            return `${a} là số nhỏ nhất`;
+        } else {
+            if (b < c) {
+                return `${b} là số nhỏ nhất`;
+            } else {
+                return `${c} là số nhỏ nhất`;
+            }
+        }
+    }
+
+    let number1 = +prompt("Nhập số so sánh");
+    let number2 = +prompt("Nhập số so sánh");
+    let number3 = +prompt("Nhập số so sánh");
+    alert(minNumber(number1, number2, number3));
+</script>
+</body>
+</html>

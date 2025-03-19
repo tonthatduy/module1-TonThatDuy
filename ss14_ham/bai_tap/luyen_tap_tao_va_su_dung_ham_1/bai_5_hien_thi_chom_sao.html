@@ -12,15 +12,14 @@
     function nameTheStar(text) {
         let index = star.indexOf(text);
         if (index !== -1) {
-            alert(`${constellation[index]}`);
-        } else {
-            alert(`Không tìm thấy`);
+            return constellation[index];
         }
+        return "Không tìm thấy";
     }
 
     let find = prompt("Nhập từ muốn tìm kiếm");
     if (find) {
-        nameTheStar(find);
+        alert(nameTheStar(find));
     } else {
         alert("Vui lòng nhập lại");
     }

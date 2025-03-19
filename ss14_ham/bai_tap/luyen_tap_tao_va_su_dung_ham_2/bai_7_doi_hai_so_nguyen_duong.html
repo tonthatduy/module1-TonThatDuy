@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    // Cách 1: biến tạm;
+    function swap(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+    }
+    let number1 = prompt("Nhập số");
+    let number2 = prompt("Nhập số");
+    alert(swap(number1, number2));
+    // Cách 2: Cộng Trừ;
+    // function swap(a, b) {
+    //     a = a + b;
+    //     b = a - b;
+    //     a = a - b;
+    //     return [a,b];
+    // }
+    // let number1 = prompt("Nhập số");
+    // let number2 = prompt("Nhập số");
+    // alert(swap(number1, number2));
+</script>
+</body>
+</html>
