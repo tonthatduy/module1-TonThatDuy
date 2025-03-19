@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài học</title>
+</head>
+<body>
+<script>
+    // showMessage("VN");
+    // showMessage("China")
+    // // hàm truyền thống
+    // function showMessage(message) {
+    //     alert("hello" + message);
+    // }
+
+    // let x = 23;
+    // let y = 34;
+    // sum(x, y)
+    // sum(5, 7)
+    //
+    // function sum(a, b) {
+    //     let sum = a + b;
+    //     alert(sum);
+    // }
+
+    // let a = [1, 2, 3];
+    // let b = a.push(5);
+    //
+    // function b() {
+    //     return b;
+    // }
+    // b()
+
+
+    // function nặc danh.
+    // const sum = function (a,b) {
+    //     return a+b;
+    // }
+    //  alert(sum);
+    function tinhGiaiThua(n) {
+        if (n === 2) {
+            return 2;
+        }
+        return n * tinhGiaiThua(n - 1);
+    }
+    alert(tinhGiaiThua(5));
+</script>
+</body>
+</html>

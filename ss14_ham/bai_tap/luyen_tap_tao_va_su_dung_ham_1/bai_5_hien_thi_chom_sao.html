@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let constellation = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function nameTheStar(text) {
+        let index = star.indexOf(text);
+        if (index !== -1) {
+            alert(`${constellation[index]}`);
+        } else {
+            alert(`Không tìm thấy`);
+        }
+    }
+
+    let find = prompt("Nhập từ muốn tìm kiếm");
+    if (find) {
+        nameTheStar(find);
+    } else {
+        alert("Vui lòng nhập lại");
+    }
+</script>
+</body>
+</html>

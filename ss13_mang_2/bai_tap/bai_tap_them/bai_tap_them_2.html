@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let n = prompt("nhập chuỗi với dạng xx/yy");
+    let array = n.split("/");
+    if (array.length === 2) {
+        if (isNaN(array[0]) || isNaN(array[1]) || array[1] === 0 || array[0] === "") {
+            alert("Nhập lại");
+        } else {
+            alert("ok");
+        }
+    } else {
+        alert("Nhập lại");
+    }
+    let count = 1;
+    if (array[1] > array[0]) {
+        for (let i = 1; i < array[0]; i++) {
+            if (array[1] % i === 0 && array[0] % i === 0) {
+                count = i;
+            }
+        }
+    } else {
+        for (let i = 1; i < array[1]; i++) {
+            if (array[1] % i === 0 && array[0] % i === 0) {
+                count = i;
+            }
+        }
+    }
+    let simpnumber1 = 0;
+    let simpnumber2 = 0;
+    if (count === 1) {
+        alert("Phân số không thể tối giản");
+    } else {
+        if (array[1] > array[0]) {
+            simpnumber1 = array[1] / count;
+            simpnumber2 = array[0] / count;
+            alert(`Phân số tối giảm ${simpnumber1}/${simpnumber2}`);
+
+        } else {
+            simpnumber1 = array[1] / count;
+            simpnumber2 = array[0] / count;
+            alert(`Phân số tối giảm ${simpnumber2}/${simpnumber1}`);
+
+        }
+    }
+</script>
+</body>
+</html>
