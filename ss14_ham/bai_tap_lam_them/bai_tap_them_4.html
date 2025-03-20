@@ -6,7 +6,21 @@
 </head>
 <body>
 <script>
-  let x = []
+    function checkCoordinates(x, y) {
+        if (x.length !== y.length) {
+            return false;
+        }
+        for (let i = 0; i < x.length; i++) {
+            if (y[i] !== 2 * x[i] + 1) {
+                return false
+            }
+        }
+        return true;
+    }
+
+    let arrayX = [1, 2, 3, 4, 5];
+    let arrayY = [3, 5, 7, 9, 11];
+    alert(checkCoordinates(arrayX, arrayY));
 </script>
 </body>
 </html>
