@@ -7,6 +7,8 @@
 <body>
 <script>
     let exit = false;
+    let arr = ["Chung", "Khánh", "Duy"];
+
     while (!exit) {
         let danhSach = prompt("-----Quản lý sinh viên -------\n"
             + "Hãy nhập số để chọn đồ uống\n"
@@ -16,13 +18,13 @@
             + "4.Kết thúc chương trình")
         switch (danhSach) {
             case "1":
-                alert("Hiển thị danh sách sinh viên");
+                displayArray();
                 break;
             case "2":
-                alert("Thêm mới sinh viên");
+                addArray();
                 break;
             case "3":
-                alert("Xóa sinh viên");
+                deleteArray()
                 break;
             case "4":
                 let confirmMessage = window.confirm("Bạn có muốn thoát không");
@@ -33,6 +35,32 @@
         }
     }
 
+    function displayArray() {
+        let list = "";
+        for (let i = 0; i < arr.length; i++) {
+            list += `${i + 1} . ${arr[i]}\n`
+        }
+        alert(list);
+    }
+
+    function addArray() {
+        let profile = prompt("Nhập tên sinh viên cần thêm");
+        arr.push(profile);
+        displayArray();
+    }
+
+    function deleteArray() {
+        let list = "";
+        for (let i = 0; i < arr.length; i++) {
+            list += `${i + 1} . ${arr[i]}\n`
+        }
+        list += " Bạn muốn xóa sinh viên nào"
+        let choose = prompt(list);
+        if (choose) {
+            arr.splice(choose - 1, 1);
+        }
+        displayArray();
+    }
 
 </script>
 </body>

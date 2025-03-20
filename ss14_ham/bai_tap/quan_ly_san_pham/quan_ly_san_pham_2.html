@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<h1>Quản Lý Sản Phẩm</h1>
+<div>
+    <h3>Add New Product</h3>
+    <input id="product" placeholder="New Product">
+    <button class="btn btn-outline-success" type="button" onclick="addNewProduct() ">Add</button>
+</div>
+<div>
+    <h3>Display All Product</h3>
+    <span>Số lượng </span><span id="soluong"></span>
+</div>
+<div id="result"></div>
+<script>
+    let sanPham = [
+        "Sony Xperia", "Samsung Galaxy",
+        "Nokia 6", "Xiaomi Redmi Note 4",
+        "Apple iPhone 6S", "Xiaomi Mi 5s Plus",
+        "Apple iPhone 8 Plus", "Fujutsu F-04E", "Oppo A71"]
+    display(sanPham);
+
+    function addNewProduct() {
+        let newproduct = document.getElementById("product").value;
+        if (newproduct !== "") {
+            sanPham.push(newproduct);
+        } else {
+            alert("Nhập lại")
+        }
+        display(sanPham);
+        document.getElementById("product").value = "";
+    }
+
+    function deleteProduc(index) {
+        let bang = confirm("Bạn có muốn xóa sản phẩm này:" + sanPham[index] + "?");
+        if (bang) {
+            sanPham.splice(index, 1);
+        }
+        display(sanPham);
+    }
+
+    function editProduc(index) {
+        let editIndex = prompt(sanPham[index] + ".Nhập tên cần sửa");
+        sanPham[index] = editIndex;
+        display(sanPham);
+    }
+
+    function display(list) {
+        let tableArray = `<table class="table table-striped">
+                     <tr>
+                            <th>Product Name</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                     </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            tableArray += `<tr>
+                        <td>${list[i]}</td>
+                        <td><button class="btn btn-success" onclick="editProduc(${i})">Edit</button></td>
+                        <td><button class="btn btn-success" onclick="deleteProduc(${i})">Delete</button></td>
+                       </tr>`;
+        }
+        tableArray += `</table>`;
+        document.getElementById("result").innerHTML = tableArray;
+        document.getElementById("soluong").innerHTML = sanPham.length;
+    }
+
+
+</script>
+</body>
+</html>
