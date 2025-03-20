@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập</title>
+</head>
+<body>
+<h1>Quán Lý Sản Phẩm</h1>
+<input id="name" placeholder="Nhập trái cây cần thêm">
+<button onclick="addFruit()">Add</button>
+<div>
+    <h3>Danh sách trái cây</h3>
+    <span>Số Lượng:</span> <span id="soluong"></span>
+</div>
+<div id="result"></div>
+<script>
+    let array = ["Orange", "Banana", "Mango"];
+    displayTable(array);
+
+    function addFruit() {
+        let name = document.getElementById("name").value;
+        if (name !== 0) {
+            array.push(name);
+        }
+        document.getElementById("name").value = "";
+        displayTable(array)
+    }
+
+    function editFruit(index) {
+        let editfruit = prompt(array[index] + " Tên cần sửa :");
+        array[index] = editfruit;
+        displayTable(array);
+    }
+
+    function deleteFruit(index) {
+        let deletefruit = confirm("Bạn có muốn xóa " + array[index]);
+        if (deletefruit) {
+            array.splice(index, 1);
+        }
+        displayTable(array);
+    }
+
+    function displayTable(list) {
+        let tableFruit = `<table border="1" style="border-collapse: collapse">
+                        <tr>
+                        <th>STT</th>
+                        <th>Tên Trái Cây</th>
+                        <th>Sửa</th>
+                        <th>Xóa</th>
+                        </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            tableFruit += `<tr>
+                        <td>${i + 1}</td>
+                        <td>${list[i]}</td>
+                        <td><button onclick="editFruit(${i})">Edit</button></td>
+                        <td><button onclick="deleteFruit(${i})">Delete</button></td>`
+        }
+        tableFruit += `</table>`;
+        document.getElementById("result").innerHTML = tableFruit;
+        document.getElementById("soluong").innerHTML = array.length;
+    }
+</script>
+</body>
+</html>
