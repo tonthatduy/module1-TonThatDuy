@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Hàm tính tổng các ước số thực sự của một số
+    function sumOfDivisors(num) {
+        let sum = 1;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                sum += i;
+                if (i !== num / i) {
+                    sum += num / i;
+                }
+            }
+        }
+        return sum;
+    }
+
+    // Hàm tìm các cặp số hoàn hảo trong khoảng từ 1 đến maxLimit
+    function findAmicableNumbers(maxLimit) {
+        const result = [];
+        for (let a = 2; a <= maxLimit; a++) {
+            const b = sumOfDivisors(a);
+            if (b > a && b <= maxLimit && sumOfDivisors(b) === a) {
+                result.push([a, b]);
+            }
+        }
+        return result;
+    }
+
+    // In ra các cặp số hoàn hảo
+    const maxLimit = 100000;
+    console.log(`Các cặp số hoàn hảo trong khoảng 1 đến ${maxLimit}:`, findAmicableNumbers(maxLimit));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập</title>
+</head>
+<body>
+<h1>Quản Lý Hàng Hóa</h1>
+<div>
+    <input id="name" placeholder="nhập tên hàng hóa">
+    <button onclick="addNewCargo()">Add</button>
+    <h3>Danh Sách Hàng Hóa</h3>
+    <span>Số Lượng Danh Sách:</span> <span id="soluongg"></span>
+</div>
+<div id="result"></div>
+<script>
+    let arrayCargo = ["Chổi", "Xọt Rác", "Thùng Rác"];
+    displayCargo(arrayCargo);
+
+    function displayCargo(list) {
+        let tableCargo = `<table border="1" style="border-collapse: collapse">
+                       <tr>
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                       </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            tableCargo += `<tr>
+                        <td>${i + 1}</td>
+                        <td>${list[i]}</td>
+                        <td><button onclick="editCargo(${i})">Edit</button></td>
+                        <td><button onclick="deleteCargo(${i})">Delete</button></td>
+                       </tr>`;
+        }
+        tableCargo += `</table>`;
+        document.getElementById("result").innerHTML = tableCargo;
+        document.getElementById("soluongg").innerHTML = arrayCargo.length;
+    }
+
+    function addNewCargo() {
+        let addName = document.getElementById("name").value;
+        if (addName !== "") {
+            arrayCargo.push(addName);
+        } else {
+            alert("Nhập lại");
+        }
+        document.getElementById("name").value = "";
+        displayCargo(arrayCargo);
+    }
+
+    function editCargo(index) {
+        let edit = prompt(`Bạn muốn sửa sản phẩm: ` + arrayCargo[index] + " ? ");
+        arrayCargo[index] = edit;
+        displayCargo(arrayCargo);
+    }
+
+    function deleteCargo(index) {
+        let cofim = confirm(`Bạn muốn xóa sản phảm này: ` + arrayCargo[index] + " ? ");
+        if (cofim) {
+            arrayCargo.splice(index, 1);
+        }
+        displayCargo(arrayCargo);
+    }
+</script>
+</body>
+</html>
