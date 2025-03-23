@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành</title>
+</head>
+<body>
+<script>
+    class SinhVien {
+        // hàm /method nhưng nó đặc biệt
+        // => sử dụng để khởi tạo đối tượng và khai báo thuộc tính
+        constructor(id, name, age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+
+        study(subject) {
+            console.log(`${this.name} Học viên đang học môn : ${subject}`)
+        }
+    }
+
+    let sv1 = new SinhVien(10, "Linh", 20);
+    sv1.study("Hóa")
+</script>
+</body>
+</html>

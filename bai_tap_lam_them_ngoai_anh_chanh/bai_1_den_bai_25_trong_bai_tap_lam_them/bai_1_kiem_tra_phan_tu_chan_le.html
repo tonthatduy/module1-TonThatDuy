@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+    <!--  Bài 1	Nhập 1 mảng từ bàn phím với độ dài n-->
+    <!--  Hiện thị mảng sau khi thêm mới các phần tử-->
+    <!--  Kiểm tra mảng vừa nhập. Nếu số phần tử chẵn bằng số phần tử lẻ thì hiện thị thông báo "OK", nếu không thoả mãn thì hiện thị "NO"-->
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng: ");
+    let array = [];
+    while (n <= 0) {
+        n = prompt("Nhập lại độ dài của mảng: ");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = prompt("Nhập giá trị phần tử thứ: " + i);
+    }
+    alert(array);
+
+    function checkArray(arr) {
+        let countEven = 0;
+        let countOdd = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (i % 2 === 0) {
+                countEven++;
+            } else {
+                countOdd++;
+            }
+
+        }
+        if (countEven === countOdd) {
+            return "OK";
+        } else {
+            return "NO";
+        }
+    }
+
+    alert(checkArray(array));
+</script>
+</body>
+</html>

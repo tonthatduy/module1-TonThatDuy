@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    function binary(a) {
+        let y = "";
+        do {
+            if (a % 2 === 0) {
+                y += "1";
+            } else {
+                y += "0";
+            }
+            a=parseInt(a/2);
+            if (a < 1) {
+              alert(`${y}`);
+              break;
+            }
+        } while (true);
+    }
+
+    let n = +prompt("Nhập số")
+    binary(n);
+</script>
+</body>
+</html>

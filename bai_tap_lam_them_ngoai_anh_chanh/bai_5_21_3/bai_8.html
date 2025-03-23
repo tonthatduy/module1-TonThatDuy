@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    function formatString(string) {
+        let format = string.toLowerCase();
+        let arr = format.split(" ");
+        let arr1 = []
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== "") {
+                arr1.push(arr[i]);
+            }
+        }
+        for (let i = 0; i < arr1.length; i++) {
+            let temp = [];
+            temp = arr1[i].split("");
+            temp[0] = temp[0].toUpperCase();
+            arr1[i] = temp.join("");
+        }
+        alert(arr1.join(" "));
+    }
+    formatString("tRuong    TaN   HAI");
+</script>
+</body>
+</html>

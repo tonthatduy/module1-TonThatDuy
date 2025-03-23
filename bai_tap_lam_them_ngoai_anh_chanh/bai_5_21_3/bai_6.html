@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let arrVowels = ["u", "e", "o", "a", "i"];
+
+    function checkString(string) {
+        let arr = string.toLowerCase().split("");
+        let arrResult = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arrVowels.includes(arr[i]) && !arrResult.includes(arr[i])) {
+                arrResult.push(arr[i]);
+            }
+        }
+        return arrResult;
+    }
+
+    let n = prompt("Nhập chuỗi");
+    alert(checkString(n));
+</script>
+</body>
+</html>

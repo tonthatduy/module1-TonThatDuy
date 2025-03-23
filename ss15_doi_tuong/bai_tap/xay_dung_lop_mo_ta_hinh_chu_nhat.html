@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+<script>
+    class Retacgle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+
+        getAcreage() {
+            return 2 * (this.length + this.width);
+        }
+
+        getPerimeter() {
+            return this.length * this.width;
+        }
+    }
+
+    let retacgle = new Retacgle(10, 5);
+    let acreage = retacgle.getAcreage();
+    let perimeter = retacgle.getPerimeter();
+    alert("Chu vi: " + acreage + " Diện tích: " + perimeter);
+</script>
+</body>
+</html>
