@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Ứng Dụng Quản Lý Sản Phẩm</h2>
+<br>
+<input id="id" placeholder="nhập mã sản phẩm ">
+<br>
+<input id="name" placeholder="nhập tên sản phẩm ">
+<br>
+<input id="price" placeholder="nhập giá sản phẩm ">
+<button onclick="themMoiSanPham()">Thêm</button>
+<br>
+<span>tổng số lượng sản phẩm :</span><span id="soLuong"></span>
+<div id="bang"></div>
+<script>
+    class SanPham {
+        constructor(ma, tensanpham, gia) {
+            this.maSanPham = ma;
+            this.tensanpham = tensanpham;
+            this.giaSanPham = gia;
+        }
+    }
+
+    let p1 = new SanPham(1312, "SamSung", 100 + "$")
+    let p2 = new SanPham(2312, "Iphone", 300 + "$")
+    let p3 = new SanPham(3433, "Xiaomi", 200 + "$")
+    let mangBanDau = [p1, p2, p3];
+    display(mangBanDau, "bang");
+
+    function display(list) {
+        let bangChuoi = `<table border="1">
+                  <tr>
+                    <th>STT</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá sản phẩm</th>
+                    <th colspan="2">Chức năng</th>
+                  </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            bangChuoi += `<tr>
+                      <td>${i + 1}</td>
+                     <td>${list[i].maSanPham}</td>
+                     <td>${list[i].tensanpham}</td>
+                     <td>${list[i].giaSanPham}</td>
+                     <td><button onclick="suaThongTinSanPham(${i})">Sửa tên</button></td>
+                     <td><button onclick="xoaSanPham(${i})">Xóa</button></td>
+                 </tr>`
+        }
+        document.getElementById("bang").innerHTML = bangChuoi;
+        document.getElementById("soLuong").innerHTML = mangBanDau.length;
+    }
+
+    function themMoiSanPham() {
+        let ma = document.getElementById("id").value;
+        let ten = document.getElementById("name").value;
+        let gia = document.getElementById("price").value;
+        if (ma === "" || ten === "" || gia === "") {
+            alert("Vui lòng nhập đầy đủ thông tin sản phẩm");
+            return;
+        }
+        let sanPhamMoi = new SanPham(ma, ten, gia + "$");
+        mangBanDau.push(sanPhamMoi);
+        display(mangBanDau);
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("price").value = "";
+    }
+
+    function xoaSanPham(index) {
+        let conf = confirm("bạn có muốn xóa sản phâm không ?")
+        if (conf) {
+            mangBanDau.splice(index, 1);
+        }
+        display(mangBanDau);
+    }
+
+    function suaThongTinSanPham(i) {
+        let suaMa = prompt("nhập mã muốn sửa :");
+        let suaTen = prompt("nhập tên muốn sửa :");
+        let suaGia = prompt("nhập giá muốn sửa :");
+        let suaSanPham = new SanPham(suaMa, suaTen, suaGia+"$")
+        mangBanDau[i] = suaSanPham;
+        display(mangBanDau);
+    }
+</script>
+</body>
+</html>

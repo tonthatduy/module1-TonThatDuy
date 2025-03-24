@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7 </title>
+    <!--  Bài 7	Khai báo  1 mảng số nguyên từ bàn phím với độ dài n.-->
+    <!--  Nhập các phần tử cho  mảng với  một số nguyên lớn hơn 10 và nhỏ hơn 100.-->
+    <!--  Hiện thị mảng sau khi thêm mới các phần tử-->
+    <!--  Viết chương trình hiện thị các phần tử của mảng có hàng đơn vị lớp hơn hàng chục ví dụ: [11, 12, 21 , 56, 19] => kết quả hiện thị ra 12,56,19-->
+
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    while (n <= 0) {
+        n = +prompt("Nhập lại độ dài của mảng");
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập phần tử giá trị thứ: " + i);
+        while (arr[i] < 10 || arr[i] > 100) {
+            arr[i] = +prompt("Nhập lại");
+        }
+    }
+    alert(arr);
+
+    function checkArray(array) {
+        let arrayResult = [];
+        for (let i = 0; i < array.length; i++) {
+            let number = array[i];
+            let unitRow = number % 10;
+            let dozens = Math.floor(number / 10);
+            if (dozens < unitRow) {
+                arrayResult.push(array[i]);
+            }
+        }
+        return arrayResult;
+    }
+
+    alert(checkArray(arr));
+
+</script>
+</body>
+</html>

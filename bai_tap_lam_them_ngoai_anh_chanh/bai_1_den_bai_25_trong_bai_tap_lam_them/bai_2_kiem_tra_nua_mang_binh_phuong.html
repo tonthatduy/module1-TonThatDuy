@@ -18,8 +18,11 @@
 <body>
 <script>
     function checkArray(arr) {
+        if (arr.length % 2 !== 0) {
+            return "False";
+        }
         for (let i = 0; i < arr.length / 2; i++) {
-            if (arr[i] * 2 === arr[i + arr.length/2 ]) {
+            if (arr[i] * 2 === arr[i + arr.length / 2]) {
                 return "True";
             }
         }
@@ -27,8 +30,9 @@
     }
 
     let arrayTrue = [1, 2, 3, 1, 4, 9];
-    let arrayFalse = [2,1,3,1,1,9]
-    alert(checkArray(arrayTrue));
+    let arrayFalse = [2, 1, 3, 1, 1, 9];
+    let arrayFalse2 = [2, 1, 3, 1, 1,];
+    alert(checkArray(arrayFalse2));
 </script>
 </body>
 </html>

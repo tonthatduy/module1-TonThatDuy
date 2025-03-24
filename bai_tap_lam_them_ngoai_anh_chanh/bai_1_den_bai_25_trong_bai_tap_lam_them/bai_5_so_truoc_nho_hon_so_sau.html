@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập</title>
+    <!--  Bài 5	Nhập 1 mảng từ bàn phím với độ dài n (với n là số chẵn)-->
+    <!--  Hiện thị mảng sau khi thêm mới các phần tử-->
+    <!--  "Kiểm tra mảng vừa nhập. Nếu các cặp phần ở liền kề nhau (phần tử thứ nhất <phần tử thứ 2) thì hiện thị thông báo ""OK"",-->
+    <!--  nếu không thoả mãn thì hiện thị ""NO"""-->
+    <!--  Ví dụ: [1,2,6,7,5,8] => OK ( vì cặp (1,2), (6,7),(5,8) thoả mãn vì  phần tử thứ nhất nhỏ hơn phần tử thứ 2-->
+    <!--  [1,2,6,7,8,4]=> NO vì cặp (8,4) không thoả mãn)-->
+
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng: ");
+    let arr = [];
+    while (n <= 0 || n % 2 !== 0) {
+        n = +prompt("Nhập lại độ dài của mảng: ");
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Nhập giá trị phần tử thứ: " + i);
+    }
+    alert(arr);
+
+    function checkArray(array) {
+        count = 0;
+        for (let i = 0; i < array.length; i += 2) {
+            if (array[i] < array[i + 1]) {
+                count++;
+            }
+        }
+        if (count === array.length / 2) {
+            return "OK"
+        } else {
+            return "NO";
+        }
+    }
+    alert(checkArray(arr));
+</script>
+</body>
+</html>

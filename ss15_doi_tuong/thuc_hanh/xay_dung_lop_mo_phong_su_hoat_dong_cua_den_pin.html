@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành</title>
+</head>
+<body>
+<script>
+    class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+
+        getEnergy() {
+            return this.energy;
+        }
+
+        setEnergy(energy) {
+            this.energy = energy;
+        }
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    }
+
+    class FlashLamp {
+        constructor(battery, status) {
+            this.battery = battery;
+            this.status = status;
+        }
+
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        }
+
+        setBattery(battery) {
+            this.battery = battery;
+        }
+
+        getStatus() {
+            if (this.status) {
+                alert("Lighting");
+            } else {
+                alert("Not lighting")
+            }
+        }
+
+        setStatus(turnOn, turnOff) {
+            if (turnOn) {
+                this.status = true;
+                this.battery.decreaseEnergy();
+            } else if (turnOff) {
+                this.status = false;
+            }
+        }
+    }
+
+    let battery = new Battery(10);
+    // battery.setEnergy(10);
+
+    let flashLamp = new FlashLamp(battery, false);
+    flashLamp.setBattery(battery);
+    document.write("Battery info: " + flashLamp.getBatteryInfo() + "<br/>");
+    flashLamp.getStatus();
+    document.write("Turn on <br/>")
+    for (let i = 0; i < 3; i++) {
+        flashLamp.setStatus(true, false);
+        flashLamp.getStatus();
+        document.write("Battery info: " + flashLamp.getBatteryInfo() + "<br/>");
+    }
+    // document.write("Battery info: " + flashLamp.getBatteryInfo() + "<br/>");
+    document.write("Turn Off<br/>")
+    flashLamp.setStatus(true, false);
+    flashLamp.getStatus();
+    document.write("Battery info: " + flashLamp.getBatteryInfo() + "<br/>");
+
+</script>
+</body>
+</html>
