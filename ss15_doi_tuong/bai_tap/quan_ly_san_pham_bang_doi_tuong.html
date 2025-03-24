@@ -14,7 +14,8 @@
     <h1>Quản Lý Sản Phẩm</h1>
     <div>
         <h3>Add New Product</h3>
-        <input id="product" placeholder="New Product">
+        <input id="idProduct" placeholder="New ID">
+        <input id="nameProduct" placeholder="New Product">
         <button type="button" class="btn btn-sm btn-outline-success" onclick="addNewProduct()">Add</button>
     </div>
     <div>
@@ -28,10 +29,9 @@
     let arr = [];
 
     class ProductPhone {
-        constructor(id, name, quantity) {
+        constructor(id, name) {
             this.id = id;
             this.name = name;
-            this.quantity = quantity;
         }
 
         getId() {
@@ -42,8 +42,13 @@
             return this.name;
         }
 
-        getQuantity() {
-            return this.quantity;
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+
         }
     }
 
@@ -58,13 +63,12 @@
                      <tr>
                             <th>Name</th>
                             <th>ID</th>
-                            <th >Quantity</th>
+                            <th colspan="2"></th>
                      </tr>`;
         for (let i = 0; i < list.length; i++) {
             tableArray += `<tr>
                         <td>${list[i].getName()}</td>
                         <td>${list[i].getId()}</td>
-                        <td>${list[i].getQuantity()}</td>
                         <td><button onclick="editProduct(${i}) " class="btn btn-success btn-sm">Edit</button></td>
                         <td><button class="btn btn-sm btn-danger" onclick="deleteProduct(${i})">Delete</button></td>
                        </tr>`;
@@ -72,6 +76,38 @@
         tableArray += `</table>`;
         document.getElementById("result").innerHTML = tableArray;
         document.getElementById("quantity").innerHTML = list.length;
+    }
+
+    function addNewProduct() {
+        let idProduct = document.getElementById("idProduct").value;
+        let nameProduct = document.getElementById("nameProduct").value;
+        let product = new ProductPhone(idProduct, nameProduct);
+        if (idProduct !== "" && nameProduct !== "") {
+            arr.push(product);
+            document.getElementById("idProduct").value = "";
+            document.getElementById("nameProduct").value = "";
+        } else {
+            alert("Nhập lại");
+        }
+        display(arr);
+    }
+
+    function deleteProduct(id) {
+        let conf = confirm("Bạn có muốn xóa sản phẩm này :" + arr[id].getName() + "?");
+        if (conf) {
+            arr.splice(id, 1);
+        }
+        display(arr);
+    }
+
+    function editProduct(id) {
+        let editNameProduct = prompt(arr[id].getName() + ".Nhập tên sản phẩm cần sửa");
+        if (editNameProduct !== "") {
+            arr[id].setName(editNameProduct);
+        } else {
+            alert("Nhập lại tên sản phẩm");
+        }
+        display(arr);
     }
 </script>
 </body>

@@ -2,90 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ứng dụng quản lý sản phẩm khởi tạo đối tượng class</title>
 </head>
+<style>
+    button {
+        background-color: #50ae50;
+        color: white;
+        border: 1px solid #50ae50;
+        height: 20px;
+    }
+    tr:nth-child(even) {
+        background-color: #e6e6e6;
+    }
+</style>
 <body>
-<h2>Ứng Dụng Quản Lý Sản Phẩm</h2>
-<br>
-<input id="id" placeholder="nhập mã sản phẩm ">
-<br>
-<input id="name" placeholder="nhập tên sản phẩm ">
-<br>
-<input id="price" placeholder="nhập giá sản phẩm ">
-<button onclick="themMoiSanPham()">Thêm</button>
-<br>
-<span>tổng số lượng sản phẩm :</span><span id="soLuong"></span>
-<div id="bang"></div>
-<script>
-    class SanPham {
-        constructor(ma, tensanpham, gia) {
-            this.maSanPham = ma;
-            this.tensanpham = tensanpham;
-            this.giaSanPham = gia;
-        }
-    }
-
-    let p1 = new SanPham(1312, "SamSung", 100 + "$")
-    let p2 = new SanPham(2312, "Iphone", 300 + "$")
-    let p3 = new SanPham(3433, "Xiaomi", 200 + "$")
-    let mangBanDau = [p1, p2, p3];
-    display(mangBanDau, "bang");
-
-    function display(list) {
-        let bangChuoi = `<table border="1">
-                  <tr>
-                    <th>STT</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Giá sản phẩm</th>
-                    <th colspan="2">Chức năng</th>
-                  </tr>`;
-        for (let i = 0; i < list.length; i++) {
-            bangChuoi += `<tr>
-                      <td>${i + 1}</td>
-                     <td>${list[i].maSanPham}</td>
-                     <td>${list[i].tensanpham}</td>
-                     <td>${list[i].giaSanPham}</td>
-                     <td><button onclick="suaThongTinSanPham(${i})">Sửa tên</button></td>
-                     <td><button onclick="xoaSanPham(${i})">Xóa</button></td>
-                 </tr>`
-        }
-        document.getElementById("bang").innerHTML = bangChuoi;
-        document.getElementById("soLuong").innerHTML = mangBanDau.length;
-    }
-
-    function themMoiSanPham() {
-        let ma = document.getElementById("id").value;
-        let ten = document.getElementById("name").value;
-        let gia = document.getElementById("price").value;
-        if (ma === "" || ten === "" || gia === "") {
-            alert("Vui lòng nhập đầy đủ thông tin sản phẩm");
-            return;
-        }
-        let sanPhamMoi = new SanPham(ma, ten, gia + "$");
-        mangBanDau.push(sanPhamMoi);
-        display(mangBanDau);
-        document.getElementById("id").value = "";
-        document.getElementById("name").value = "";
-        document.getElementById("price").value = "";
-    }
-
-    function xoaSanPham(index) {
-        let conf = confirm("bạn có muốn xóa sản phâm không ?")
-        if (conf) {
-            mangBanDau.splice(index, 1);
-        }
-        display(mangBanDau);
-    }
-
-    function suaThongTinSanPham(i) {
-        let suaMa = prompt("nhập mã muốn sửa :");
-        let suaTen = prompt("nhập tên muốn sửa :");
-        let suaGia = prompt("nhập giá muốn sửa :");
-        let suaSanPham = new SanPham(suaMa, suaTen, suaGia+"$")
-        mangBanDau[i] = suaSanPham;
-        display(mangBanDau);
-    }
-</script>
+<div id="addProduct">
+    <h1>Add New Product</h1>
+    <div style="border: 20px solid #f0f0f0; width: 250px; background-color: #f0f0f0">
+        <input style="margin-bottom: 20px" type="number" placeholder="New ID Product" id="productID">
+        <input style="margin-bottom: 20px" type="text" placeholder="New Name Product" id="productName"><br/>
+        <button style="width: 170px;" onclick="productManager.addNewProduct()">Add</button>
+    </div>
+</div>
+<div>
+    <h1>Display All Product</h1>
+    <div style="display: flex">
+        <h3 style="padding-right: 35%">Product Name</h3>
+        <p style="color:red;font-weight: bold;" id="totalProduct">No product to display</p>
+    </div>
+</div>
+<div>
+    <p id="display"></p>
+</div>
 </body>
+<script>
+    class Product {
+        constructor(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+        getId() {
+            return this.id;
+        }
+        setId(id) {
+            this.id = id;
+        }
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+    }
+    class ProductManager {
+        constructor() {
+            this.listProducts = [];
+        }
+        //hiển thị
+        displayAllProduct() {
+            let tableString = "<table style='width: 50%; border-collapse: collapse; border: none'>";
+            for (let i = 0; i < this.listProducts.length; i++) {
+                tableString += "<tr>";
+                tableString += "<td>" + this.listProducts[i].getId() + "</td>";
+                tableString += "<td>" + this.listProducts[i].getName() + "</td>";
+                tableString += "<td>" + "<button onclick='productManager.editProduct("+i+")'>Edit</button>" + "</td>";
+                tableString += "<td>" + "<button onclick='productManager.deleteProduct("+i+")'>Delete</button>" + "</td>";
+                tableString += "</tr>";
+            }
+            tableString += "</table>";
+            document.getElementById("display").innerHTML = tableString;
+        }
+        //thêm mới
+        addNewProduct() {
+            let productID = document.getElementById("productID").value;
+            let productName = document.getElementById("productName").value;
+            let product = new Product(productID, productName);
+            if (productName.trim() !== "" && productID.trim() !== "") {
+                this.listProducts.push(product);
+                productManager.displayAllProduct(this.listProducts);
+                document.getElementById("productID").value = "";
+                document.getElementById("productName").value = "";
+                productManager.updateTotal();
+            } else {
+                alert("Vui lòng nhập lại");
+            }
+        }
+        //xóa sản phẩm
+        deleteProduct(id) {
+            let confirm = window.confirm("Bạn có muốn xóa " + this.listProducts[id].getName() + "?");
+            if (confirm) {
+                this.listProducts.splice(id, 1);
+            }
+            productManager.displayAllProduct();
+            productManager.updateTotal();
+        }
+        //sửa sản phẩm
+        editProduct(id) {
+            let editNameProduct = prompt(this.listProducts[id].getName()+ "Nhập tên cần sửa");
+            if (editNameProduct.trim() !== "") {
+                this.listProducts[id].setName(editNameProduct);
+            } else {
+                alert("Nhập lại tên");
+            }
+            //this.listProducts[id].setName(editNameProduct);
+            productManager.displayAllProduct();
+            productManager.updateTotal();
+        }
+        //số lượng sản phẩm
+        updateTotal() {
+            if (this.listProducts.length > 0) {
+                document.getElementById("totalProduct").innerText = this.listProducts.length+ " products";
+            } else {
+                document.getElementById("totalProduct").innerText = "No product to display";
+            }
+        }
+    }
+    let productManager = new ProductManager();
+    // productManager.displayAllProduct();
+</script>
 </html>
