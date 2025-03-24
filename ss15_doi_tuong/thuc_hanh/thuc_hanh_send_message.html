@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(id, name) {
+
+            this.is = id;
+            this.name = name;
+            this.message = "";
+
+            }
+        setMessage (message) {
+            return this.message = message;
+        }
+        getMessage () {
+            return this.message;
+        }
+        sendMessage (message,mobile) {
+            mobile.setMessage(message);
+        }
+    }
+    let iphone = new Mobile(1,"Iphone");
+    let android = new Mobile(2,"Samsung");
+    iphone.sendMessage("Message from iphone", android);
+    let message = android.getMessage();
+    alert(message);
+</script>
+
+</body>
+</html>
