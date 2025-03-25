@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập</title>
+</head>
+<body>
+<script>
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+            this.lamp = new ElectricLamp();
+        }
+
+        switchOff() {
+            this.status = false;
+            this.lamp.turnOff();
+        }
+
+        switchOn() {
+            this.status = true;
+            this.lamp.turnOn();
+        }
+
+    }
+
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+        }
+
+        turnOn() {
+            this.status = true;
+            console.log("Đang bật");
+        }
+
+        turnOff() {
+            this.status = false;
+            console.log("Đang tắt");
+        }
+
+    }
+    let switchButton = new SwitchButton();
+    switchButton.switchOn();
+    switchButton.switchOff();
+</script>
+</body>
+</html>
