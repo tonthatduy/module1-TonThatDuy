@@ -6,16 +6,72 @@
 </head>
 <body>
 <script>
-    class Mobile {
-        constructor(pin,name) {
-            this.pin = pin;
-            this.name = name;
-            this.message = "";
+    class DienThoai {
+        constructor(dungLuongPin) {
+            this.trangThai = false; // mặc định đang tắt
+            this.dungLuongPin = dungLuongPin;
+            this.vungNhoSoanTin = "";
+            this.vungNhoTinDen = [];
+            this.vungNhoTinGui = []
         }
-        setMessage (message) {
-            return this.message = message;
+
+        getStatus() {
+            return this.trangThai;
+        }
+
+        batTatDienThoai() {
+            this.trangThai = !this.trangThai;
+        }
+
+        sacPin() {
+            if (this.dungLuongPin < 10) {
+                this.dungLuongPin = 100;
+            } else {
+                console.log("Điện thoại chưa cần sạc")
+            }
+        }
+
+        soanTinNhan(text) {
+            this.vungNhoSoanTin = text;
+        }
+
+        guiTinNhan(dienThoai, text) {
+            this.soanTinNhan(text)
+            dienThoai.vungNhoTinDen.push(this.vungNhoSoanTin);
+            this.vungNhoTinGui.push(this.vungNhoSoanTin);
+            this.giamPin();
+        }
+
+        nhanTinNhan(text) {
+            this.vungNhoTinDen.push(text);
+        }
+
+        xemTinDaGui() {
+            for (let i = 0; i < this.vungNhoTinGui.length; i++) {
+                console.log((i + 1) + "." + this.vungNhoTinGui);
+                this.giamPin();
+            }
+        }
+
+        xemTinDaNhan() {
+            for (let i = 0; i < this.vungNhoTinDen.length; i++) {
+                console.log((i + 1) + "." + this.vungNhoTinDen)
+            }
+        }
+        giamPin(){
+            if (this.dungLuongPin>0){
+                this.dungLuongPin--;
+            } else {
+                console.log("Điện thoại sắp hết pin, yêu cầu sạc")
+            }
         }
     }
+
+
+    let dienThoai1 = new DienThoai(100);
+    let dienThoai2 = new DienThoai(100);
+    dienThoai1.guiTinNhan(dienThoai2, " hello dt1");
+    dienThoai2.xemTinNhanDaNhan();
 </script>
 </body>
 </html>

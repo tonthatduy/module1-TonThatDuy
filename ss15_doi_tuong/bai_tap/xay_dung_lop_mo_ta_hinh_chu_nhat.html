@@ -5,23 +5,43 @@
     <title>Hình chữ nhật</title>
 </head>
 <body>
+<canvas id="canvas1" width="500" height="400" style="border: 1px solid red"></canvas>
 <script>
     class Retacgle {
-        constructor(length, width) {
-            this.length = length;
+        constructor(heigt, width) {
+            this.height = heigt;
+            this.width = width;
+        }
+
+        setHeight(height) {
+            this.height = height;
+        }
+
+        setWidth(width) {
             this.width = width;
         }
 
         getAcreage() {
-            return 2 * (this.length + this.width);
+            return 2 * (this.height + this.width);
         }
 
         getPerimeter() {
-            return this.length * this.width;
+            return this.height * this.width;
+        }
+
+        draw() {
+            let canvas = document.getElementById("canvas1");
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = "red"
+            ctx.fillRect(0, 0, this.width, this.height);
+            // ctx.stroke;
         }
     }
 
     let retacgle = new Retacgle(10, 5);
+    retacgle.setWidth(200);
+    retacgle.setHeight(100)
+    retacgle.draw();
     let acreage = retacgle.getAcreage();
     let perimeter = retacgle.getPerimeter();
     alert("Chu vi: " + acreage + " Diện tích: " + perimeter);

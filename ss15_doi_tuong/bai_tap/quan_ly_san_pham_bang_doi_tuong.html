@@ -92,18 +92,18 @@
         display(arr);
     }
 
-    function deleteProduct(id) {
-        let conf = confirm("Bạn có muốn xóa sản phẩm này :" + arr[id].getName() + "?");
+    function deleteProduct(index) {
+        let conf = confirm("Bạn có muốn xóa sản phẩm này :" + arr[index].getName() + "?");
         if (conf) {
-            arr.splice(id, 1);
+            arr.splice(index, 1);
         }
         display(arr);
     }
 
-    function editProduct(id) {
-        let editNameProduct = prompt(arr[id].getName() + ".Nhập tên sản phẩm cần sửa");
+    function editProduct(index) {
+        let editNameProduct = prompt(arr[index].getName() + ".Nhập tên sản phẩm cần sửa");
         if (editNameProduct !== "") {
-            arr[id].setName(editNameProduct);
+            arr[index].setName(editNameProduct);
         } else {
             alert("Nhập lại tên sản phẩm");
         }
