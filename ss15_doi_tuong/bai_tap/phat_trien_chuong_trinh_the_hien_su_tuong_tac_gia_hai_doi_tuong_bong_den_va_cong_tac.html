@@ -9,19 +9,31 @@
     class SwitchButton {
         constructor() {
             this.status = false;
-            this.lamp = new ElectricLamp();
+            this.lamp = null;
+        }
+
+        connectToLamp(electricLamp) {
+            if (this.lamp !== null) {
+                console.log("Thiết bị chưa được kết nối");
+            } else {
+                this.lamp = electricLamp;
+                console.log("Thiết bị đã được kết nối")
+            }
         }
 
         switchOff() {
             this.status = false;
-            this.lamp.turnOff();
+            if (this.lamp) {
+                this.lamp.turnOff();
+            }
         }
 
         switchOn() {
             this.status = true;
-            this.lamp.turnOn();
+            if (this.lamp) {
+                this.lamp.turnOn();
+            }
         }
-
     }
 
     class ElectricLamp {
@@ -40,9 +52,12 @@
         }
 
     }
+
     let switchButton = new SwitchButton();
-    switchButton.switchOn();
+    let electricLamp = new ElectricLamp();
+    switchButton.connectToLamp(electricLamp);
     switchButton.switchOff();
+    switchButton.switchOn();
 </script>
 </body>
 </html>
