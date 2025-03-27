@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+    <!--  Bài 2: Cho xâu kí tự. Hãy tìm ra chuỗi con liên tiếp tăng dần có độ dài lớn nhất-->
+    <!--  Ví dụ: s = "abefaefghedcb", thì kết quả getMaxChildString (s)   “aefgh”-->
+    <!--  ⇨aefgh : là chuỗi con liên tiếp trong chuỗi cha có độ dài lớp nhất.-->
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let arr = str.split("");
+        let mangChuoiCon = [];
+        for (let i = 0; i < arr.length; i++) {
+            let chuoiCon = arr[i];
+            for (let j = i; j < arr.length - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    chuoiCon += arr[j + 1];
+                } else {
+                    break;
+                }
+            }
+            mangChuoiCon.push(chuoiCon);
+
+        }
+        let max = mangChuoiCon[0].length;
+        for (let i = 0; i < mangChuoiCon.length; i++) {
+            if (mangChuoiCon[i].length < mangChuoiCon[i + 1].length) {
+                max = mangChuoiCon[i + 1].length;
+            }
+        }
+        return max;
+    }
+
+    console.log(checkString("fbcabccabcde"));
+
+
+    /// Cách 2:
+    // function getMaxChildString(str) {
+    //     let chuoiDaiNhat = "";
+    //     let chuoiDauTien = str[0];
+    //
+    //     for (let i = 1; i < str.length; i++) {
+    //         if (str[i] > str[i - 1]) {
+    //             chuoiDauTien += str[i];
+    //         } else {
+    //             if (chuoiDauTien.length > chuoiDaiNhat.length) {
+    //                 chuoiDaiNhat = chuoiDauTien;
+    //             }
+    //             chuoiDauTien = str[i]; // Bắt đầu chuỗi con mới
+    //         }
+    //     }
+    //
+    //     // Kiểm tra lần cuối nếu chuỗi hiện tại dài hơn
+    //     if (chuoiDauTien.length > chuoiDaiNhat.length) {
+    //         chuoiDaiNhat = chuoiDauTien;
+    //     }
+    //
+    //     return chuoiDaiNhat;
+    // }
+    //
+    // console.log(getMaxChildString("abefaefghedcbabcdefgz")); // Output: "aefgh"
+</script>
+</body>
+</html>

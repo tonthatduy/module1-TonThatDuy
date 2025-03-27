@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+    <!--  Bài 11	Viết 1 hàm truyền vào 1 tham số (với tham số là một chuỗi), (checkString(str))-->
+    <!--  "Hàm trả về mảng các ký tự không phải là số[0,….9] và không phải là ký tự alphabet[a…z,A,…Z]-->
+    <!--  "-->
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+            let element = str[i];
+            if (!(element >= "a" && element <= "z") &&
+                !(element >= "A" && !element <= "Z") &&
+                !(element >= "0" && !element <= "9")) {
+                arr.push(str[i]);
+            }
+        }
+        return arr;
+    }
+
+    let n = prompt("Nhập chuỗi cần kiểm tra")
+    alert(checkString(n));
+</script>
+</body>
+</html>

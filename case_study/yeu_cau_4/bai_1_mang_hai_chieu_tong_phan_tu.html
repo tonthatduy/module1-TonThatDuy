@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <!--    Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.-->
+</head>
+<body>
+<script>
+
+    function sumMangHaiChieu(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] % 2 === 0) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let m = +prompt("Nhập số hàng")
+    let n = +prompt("Nhập số cột")
+
+    let arr1 = new Array(m)
+    for (i = 0; i < arr1.length; i++) {
+        arr1[i] = new Array(n);
+        for (let j = 0; j < arr1[i].length; j++) {
+            arr1[i][j] = +prompt("Nhập số")
+        }
+
+    }
+    console.log(arr1);
+
+    console.log(sumMangHaiChieu(arr1))
+</script>
+</body>
+</html>

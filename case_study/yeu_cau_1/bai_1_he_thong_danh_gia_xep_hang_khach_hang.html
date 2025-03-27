@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    /// <100 Bronze Không có ưu đãi
+    /// <100 - 499 Silver Giảm 5% trên đơn hàng tiếp theo
+    /// <500 - 999 Gold Giảm 10% trên đơn hàng tiếp theo
+    /// >=1000 Platinum Giảm 20% miễn phí giao hàng,quà tặng Vip
+    // function getCustomerRank(spentAmount) {
+    //     if (spentAmount >= 1000) {
+    //         return {
+    //             rank: "Platinum",
+    //             discount: "20%",
+    //             freeShipping: "Được FreeShip",
+    //             gift: "Có quà tặng",
+    //         }
+    //     } else if (spentAmount >= 500) {
+    //         return {
+    //             rank: "Gold",
+    //             discount: "10%",
+    //             freeShipping: "Được FreeShip",
+    //             gift: "Không có quà tặng",
+    //         }
+    //     } else if (spentAmount >= 100) {
+    //         return {
+    //             rank: "Silver",
+    //             discount: "5%",
+    //             freeShipping: "Không có FreeShip",
+    //             gift: "Không có quà tặng",
+    //         }
+    //     } else {
+    //         return {
+    //             rank: "Bronze",
+    //             discount: "Không có ưu đãi",
+    //             freeShipping: "Không có FreeShip",
+    //             gift: "Không có quà tặng",
+    //         }
+    //     }
+    //
+    // }
+    //
+    // let amount = prompt("Nhập tổng chi tiêu")
+    // let check = getCustomerRank(amount);
+    // console.log(`Hạng hiện tại của bạn: ${check.rank}`);
+    // console.log(`Giảm ${check.discount} cho đơn hàng tiếp theo`);
+    // console.log(`${check.freeShipping} `);
+    // console.log(`${check.gift}`);
+
+    //Cách 2 dùng Switch Case
+
+
+    // function getCustomerRank(spentAmount) {
+    //     switch (true) {
+    //         case spentAmount >= 1000:
+    //             return {
+    //                 rank: "Platinum",
+    //                 discount: "20%",
+    //                 freeShipping: "Được FreeShip",
+    //                 gift: "Có quà tặng"
+    //             };
+    //         case spentAmount >= 500:
+    //             return {
+    //                 rank: "Gold",
+    //                 discount: "10%",
+    //                 freeShipping: "Được FreeShip",
+    //                 gift: "Không có quà tặng"
+    //             };
+    //         case spentAmount >= 100:
+    //             return {
+    //                 rank: "Silver",
+    //                 discount: "5%",
+    //                 freeShipping: "Không có FreeShip",
+    //                 gift: "Không có quà tặng"
+    //             };
+    //         default:
+    //             return {
+    //                 rank: "Bronze",
+    //                 discount: "Không có ưu đãi",
+    //                 freeShipping: "Không có FreeShip",
+    //                 gift: "Không có quà tặng"
+    //             };
+    //     }
+    // }
+
+    // Cách 3 dùng mảng và vòng lặp For
+    function getCustomerRank(spentAmount) {
+        const ranks = [
+            [1000, "Platinum", "20%", "Được FreeShip", "Có quà tặng"],
+            [500, "Gold", "10%", "Được FreeShip", "Không có quà tặng"],
+            [100, "Silver", "5%", "Không có FreeShip", "Không có quà tặng"],
+            [0, "Bronze", "Không có ưu đãi", "Không có FreeShip", "Không có quà tặng"]
+        ];
+
+        for (let i = 0; i < ranks.length; i++) {
+            if (spentAmount >= ranks[i][0]) {
+                return {
+                    rank: ranks[i][1],
+                    discount: ranks[i][2],
+                    freeShipping: ranks[i][3],
+                    gift: ranks[i][4]
+                };
+            }
+        }
+    }
+
+    let amount = parseFloat(prompt("Nhập tổng chi tiêu"));
+    if (isNaN(amount) || amount < 0) {
+        console.log("Vui lòng nhập số hợp lệ.");
+    } else {
+        const check = getCustomerRank(amount);
+        console.log(`Hạng hiện tại của bạn: ${check.rank}`);
+        console.log(`Giảm ${check.discount} cho đơn hàng tiếp theo`);
+        console.log(`${check.freeShipping}`);
+        console.log(`${check.gift}`);
+    }
+
+
+</script>
+</body>
+</html>

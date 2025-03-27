@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 yêu cầu 3</title>
+    <!--    Bài 1: Viết một hàm kiểm tra một chuỗi. Kiểm trả xem chuối đó có phải định dạng là một email hay không?  xxxxxx@yyy.zzz-->
+    <!--    + Một chuỗi là một email nếu thoả mãn điều kiện:-->
+    <!--    -Có ít nhất 1 @-->
+    <!--    -Độ dài email ít nhất 6 ký tự và (x là các ký tự chữ hoặc số, bắt đầu không được là số)-->
+    <!--    -yyy,zzz: là các ký tự chữ in thường và tối thiểu là 3 và tối đa là 10-->
+    <!--    Lưu ý không được sử dụng regex-->
+</head>
+<body>
+<script>
+    function checkStringGmail(str) {
+        if (!(str.includes("@")) || !(str.includes("."))) {
+            return false;
+        }
+        let arr = str.split("@");
+        if (arr.length !== 2) {
+            return false;
+        }
+        let arrX = arr[0].split("")
+        if (!(isNaN(arrX[0])) || arrX === "" || arrX.includes(" ")) {
+            return false;
+        }
+        if (arrX.length < 6) {
+            return false;
+        }
+        let arrY = arr[1].split(".");
+        if (arrY.length !== 2) {
+            return false;
+        }
+        if ((arrY[0] < 3 || arrY[0] > 10) || arrY[1] < 3 || arrY[1] > 10) {
+            return false;
+        }
+        return true;
+    }
+
+    let n = prompt("Nhập chuỗi")
+    console.log(checkStringGmail(n));
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <!--    Bài 2: Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B-->
+    <!--    nhưng lại không xuất hiện A-->
+    <!--    Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện-->
+    <!--    Ví dụ: A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]-->
+
+</head>
+<body>
+<script>
+    function checkDoubleArray(arr1, arr2) {
+        let arrResult = [];
+        for (let i = 0; i < arr2.length; i++) {
+            if (!(arr1.includes(arr2[i])) && !arrResult.includes(arr2[i])) {
+                arrResult.push(arr2[i]);
+            }
+        }
+        return arrResult;
+    }
+
+    let array1 = [7, 2, 5, 3, 5, 3];
+    let array2 = [7, 2, 5, 4, 6, 3, 5, 3];
+    console.log(checkDoubleArray(array1, array2));
+</script>
+</body>
+</html>

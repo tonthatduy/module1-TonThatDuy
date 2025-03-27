@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+    <!--  Bài tập 12	Viết hàm truyền vào tham số là một chuỗi.. checkDate(dateString)-->
+    <!--  Kiểm tra xem chuối nhập vào dateString có phải là định dạng của ngày tháng năm hay không ( dd/mm/yyyy)-->
+    <!--  Nếu đúng return true, sai return false-->
+
+</head>
+<body>
+<script>
+    function checkDate(dateString) {
+        if (dateString.length !== 10) {
+            return false;
+        }
+        let arr = dateString.split("/");
+        alert(arr)
+        if (arr.length !== 3) {
+            return false;
+        }
+        if (arr[0] > 32 || arr[0] < 0) {
+            return false;
+        }
+        if (arr[1] > 12 || arr[1] < 0) {
+            return false;
+        }
+        if (arr[2] < 10000 || arr[2] > 1000) {
+            return false;
+        }
+        return true;
+    }
+
+    alert(checkDate("12/11/10000"));
+</script>
+</body>
+</html>

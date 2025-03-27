@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2 - Tìm chuỗi con tăng dần dài nhất</title>
+</head>
+<body>
+<script>
+  function getMaxChildString(str) {
+    let chuoiDaiNhat = "";
+    let chuoiDauTien = str[0];
+
+    for (let i = 1; i < str.length; i++) {
+      if (str[i] > str[i - 1]) {
+        chuoiDauTien += str[i];
+      } else {
+        if (chuoiDauTien.length > chuoiDaiNhat.length) {
+          chuoiDaiNhat = chuoiDauTien;
+        }
+        chuoiDauTien = str[i]; // Bắt đầu chuỗi con mới
+      }
+    }
+
+    // Kiểm tra lần cuối nếu chuỗi hiện tại dài hơn
+    if (chuoiDauTien.length > chuoiDaiNhat.length) {
+      chuoiDaiNhat = chuoiDauTien;
+    }
+
+    return chuoiDaiNhat;
+  }
+
+  console.log(getMaxChildString("abefaefghedcbabcdefgz")); // Output: "aefgh"
+</script>
+</body>
+</html>
+
+</body>
+</html>

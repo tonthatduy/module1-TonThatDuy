@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 15</title>
+    <!--    Bài 15	Nhập 1 mảng số từ bàn phím với độ dài n-->
+    <!--    Hiện thị mảng sau khi thêm mới các phần tử-->
+    <!--    Kiểm tra mảng vừa nhập. Nếu tất cả các phần tử trong mảng đều thuộc dãy số fibonacy  thì hiện thị thông báo "OK", nếu không thoả mãn thì hiện thị "NO"-->
+
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng: ");
+    let array = [];
+    while (n <= 0) {
+        n = +prompt("Nhập lại độ dài của mảng: ");
+    }
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt("Nhập giá trị phần tử thứ: " + i);
+    }
+    alert(array);
+
+    function fibonacciNumber(num) {
+        let n1 = 0;
+        let n2 = 1;
+        let n = 0;
+        let arrayFibonacci = [n1, n2];
+        while (n <= num) {
+            n = n1 + n2;
+            arrayFibonacci.push(n);
+            n1 = n2;
+            n2 = n;
+        }
+        return arrayFibonacci.includes(num);
+    }
+
+    function checkArrayNumber(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (!fibonacciNumber(arr[i])) {
+                return "NO";
+            }
+        }
+        return "OK";
+    }
+
+    alert(checkArrayNumber(array));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình đọc số thành chuỗi</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập vào một số");
+    while (number < 0 || number > 1000 || isNaN(number) === true) {
+        number = +prompt("Nhập lại");
+    }
+    console.log(number);
+    let arr = number.toString().split("");
+    console.log(arr);
+    let count = 0;
+    let reading = [];
+    for (let i = 0; i < arr.length; i++) {
+        let arr1 = arr.slice();
+        if (arr.length === 1) {
+            switch (arr[i]) {
+                case "0":
+                    reading.push("Không");
+                    break;
+                case "1":
+                    reading.push("Một");
+                    break;
+                case "2":
+                    reading.push("Hai");
+                    break;
+                case "3":
+                    reading.push("Ba");
+                    break;
+                case "4":
+                    reading.push("Bốn");
+                    break;
+                case "5":
+                    reading.push("Năm");
+                    break;
+                case "6":
+                    reading.push("Sáu");
+                    break;
+                case "7":
+                    reading.push("Bảy");
+                    break;
+                case "8":
+                    reading.push("Tám");
+                    break;
+                case "9":
+                    reading.push("Chín");
+                    break;
+            }
+            break;
+        } else if (arr.length === 2) {
+            if (arr[0] === "1") {
+                arr.splice(0, 1);
+                reading.push("Mười");
+                switch (arr[i]) {
+                    case "1":
+                        reading.push("Một");
+                        break;
+                    case "2":
+                        reading.push("Hai");
+                        break;
+                    case "3":
+                        reading.push("Ba");
+                        break;
+                    case "4":
+                        reading.push("Bốn");
+                        break;
+                    case "5":
+                        reading.push("Năm");
+                        break;
+                    case "6":
+                        reading.push("Sáu");
+                        break;
+                    case "7":
+                        reading.push("Bảy");
+                        break;
+                    case "8":
+                        reading.push("Tám");
+                        break;
+                    case "9":
+                        reading.push("Chín");
+                        break;
+                }
+                count++;
+                if (count === 1) {
+                    break;
+                }
+            }
+            switch (arr[i]) {
+                case "1":
+                    reading.push("Một");
+                    break;
+                case "2":
+                    reading.push("Hai");
+                    break;
+                case "3":
+                    reading.push("Ba");
+                    break;
+                case "4":
+                    reading.push("Bốn");
+                    break;
+                case "5":
+                    reading.push("Năm");
+                    break;
+                case "6":
+                    reading.push("Sáu");
+                    break;
+                case "7":
+                    reading.push("Bảy");
+                    break;
+                case "8":
+                    reading.push("Tám");
+                    break;
+                case "9":
+                    reading.push("Chín");
+                    break;
+            }
+            count++;
+            if (count === 1) {
+                reading.push("Mươi");
+            } else {
+                break;
+            }
+        } else if (arr.length === 3) {
+            if (arr[1] === "0" && arr[2] !== "0") {
+                switch (arr[i]) {
+                    case "1":
+                        reading.push("Một");
+                        break;
+                    case "2":
+                        reading.push("Hai");
+                        break;
+                    case "3":
+                        reading.push("Ba");
+                        break;
+                    case "4":
+                        reading.push("Bốn");
+                        break;
+                    case "5":
+                        reading.push("Năm");
+                        break;
+                    case "6":
+                        reading.push("Sáu");
+                        break;
+                    case "7":
+                        reading.push("Bảy");
+                        break;
+                    case "8":
+                        reading.push("Tám");
+                        break;
+                    case "9":
+                        reading.push("Chín");
+                        break;
+                }
+                count++;
+                if (count === 1) {
+                    reading.push("Trăm");
+                    reading.push("Lẻ");
+                }
+            } else if (arr1[1] === "1") {
+                switch (arr1[i]) {
+                    case "1":
+                        reading.push("Một");
+                        break;
+                    case "2":
+                        reading.push("Hai");
+                        break;
+                    case "3":
+                        reading.push("Ba");
+                        break;
+                    case "4":
+                        reading.push("Bốn");
+                        break;
+                    case "5":
+                        reading.push("Năm");
+                        break;
+                    case "6":
+                        reading.push("Sáu");
+                        break;
+                    case "7":
+                        reading.push("Bảy");
+                        break;
+                    case "8":
+                        reading.push("Tám");
+                        break;
+                    case "9":
+                        reading.push("Chín");
+                        break;
+                }
+                count++;
+                if (count === 1) {
+                    arr1.splice(1, 1);
+                    reading.push("Trăm");
+                    reading.push("Mười");
+                } else {
+                    break;
+                }
+            } else if (arr[1] === "0" && arr[2] === "0") {
+                switch (arr[i]) {
+                    case "1":
+                        reading.push("Một");
+                        break;
+                    case "2":
+                        reading.push("Hai");
+                        break;
+                    case "3":
+                        reading.push("Ba");
+                        break;
+                    case "4":
+                        reading.push("Bốn");
+                        break;
+                    case "5":
+                        reading.push("Năm");
+                        break;
+                    case "6":
+                        reading.push("Sáu");
+                        break;
+                    case "7":
+                        reading.push("Bảy");
+                        break;
+                    case "8":
+                        reading.push("Tám");
+                        break;
+                    case "9":
+                        reading.push("Chín");
+                        break;
+                }
+                reading.push("Trăm");
+                break;
+            } else {
+                switch (arr[i]) {
+                    case "1":
+                        reading.push("Một");
+                        break;
+                    case "2":
+                        reading.push("Hai");
+                        break;
+                    case "3":
+                        reading.push("Ba");
+                        break;
+                    case "4":
+                        reading.push("Bốn");
+                        break;
+                    case "5":
+                        reading.push("Năm");
+                        break;
+                    case "6":
+                        reading.push("Sáu");
+                        break;
+                    case "7":
+                        reading.push("Bảy");
+                        break;
+                    case "8":
+                        reading.push("Tám");
+                        break;
+                    case "9":
+                        reading.push("Chín");
+                        break;
+                }
+                count++;
+                if (count === 1) {
+                    reading.push("Trăm");
+                } else if (count === 2) {
+                    reading.push("Mươi");
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+    console.log(reading.join(""));
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+    <!--    Bài 2: Viết chương trình đọc số thành chuỗi-->
+    <!--    + Kiểm tra dữ liệu nhập vào-->
+    <!--    -Phải là số và là số nguyên dương-->
+    <!--    -Phải nhỏ hơn 999-->
+    <!--    + Thực hiện: đọc số thành chuỗi sang tiếng việt-->
+</head>
+<body>
+<script>
+    function demSo(strNumber) {
+        let array = ["Không", "Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "Tám", "Chín"];
+        if (strNumber === "" || strNumber === null) {
+            alert("Vui lòng nhập lại số");
+            return
+        }
+        let str = strNumber.toString();
+        let arrResult = [];
+        for (let i = 0; i < str.length; i++) {
+            let temp = parseInt(str[i]);
+            arrResult.push(array[temp]);
+        }
+        if (str.length === 3) {
+            arrResult.splice(1, 0, "Trăm");
+            if (str[2] == 0 && str[1] == 0) {
+                arrResult.splice(arrResult.length - 2, 2,);
+            } else {
+                if (str[1] == 0) {
+                    arrResult.splice(arrResult.length - 2, 1, "Lẻ");
+                } else if (str[1] == 1 && str[2] == 0) {
+                    arrResult.splice(arrResult.length - 2, 2, "Mười");
+                } else if (str[2] == 0 && str[1] !== 0) {
+                    arrResult.splice(arrResult.length - 1, 1, "Mươi");
+                } else if (str[1] == 1) {
+                    arrResult.splice(arrResult.length - 2, 1, "Mười");
+                }
+
+            }
+
+        } else if (str.length === 2) {
+            if (str[0] == 1 && str[1] == 0) {
+                arrResult.splice(arrResult.length - 2, 2, "Mười");
+            } else if (str[1] == 0 && str[0] !== 0) {
+                arrResult.splice(arrResult.length - 1, 1, "Mươi");
+            } else if (str[0] == 1) {
+                arrResult.splice(arrResult.length - 2, 1, "Mười");
+            } else {
+                arrResult.splice(arrResult.length - 1, 0, "Mươi")
+            }
+        }
+
+
+        return arrResult.join(' ');
+    }
+
+    console.log(demSo(110))
+</script>
+</body>
+</html>

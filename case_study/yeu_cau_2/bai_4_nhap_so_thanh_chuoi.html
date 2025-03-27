@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <!--  Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ. Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.-->
+</head>
+<body>
+<script>
+    let arrayString = ["Không", "Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "Tám", "Chín"];
+    function checkNumber(num) {
+        if (num === "" || num === null) {
+            alert("Vui lòng nhập lại số");
+            return
+        }
+        let str = num.toString();
+        console.log(str)
+        let arrResult = [];
+        for (let i = 0; i < str.length; i++) {
+            let temp = parseInt(str[i]);
+            arrResult.push(arrayString[temp]);
+        }
+        return arrResult.join(" ");
+
+    }
+
+    let number = prompt("Nhập số cần đếm")
+    console.log(checkNumber(number));
+</script>
+</body>
+</html>

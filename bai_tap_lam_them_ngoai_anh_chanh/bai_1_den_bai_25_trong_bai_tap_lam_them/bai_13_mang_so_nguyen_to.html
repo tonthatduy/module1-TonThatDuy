@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 13</title>
+    <!--    Bài 13	Nhập 1 mảng từ bàn phím với độ dài n-->
+    <!--    Hiện thị mảng sau khi thêm mới các phần tử-->
+    <!--    Kiểm tra mảng vừa nhập. Nếu tất cả các phần tử trong mảng là số nguyên tố  thì hiện thị thông báo "OK", nếu không thoả mãn thì hiện thị "NO"-->
+
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    while (n <= 0) {
+        n = +prompt("Nhập lại độ dài của mảng");
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Nhập giá trị thứ: " + i));
+    }
+    alert(arr);
+
+    function checkElementArray(num) {
+        if (num < 2) {
+            return false;
+        }
+        for (let i = 1; i <= num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function checkArray(array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (!checkElementArray(array[i])) {
+                count++;
+            }
+        }
+        if (count === array.length) {
+            return "OK";
+        } else {
+            return "NO";
+        }
+    }
+
+    alert(checkArray(arr));
+</script>
+</body>
+</html>
