@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 17</title>
+    <!--  Bài 17	Viết 1 hàm truyền vào 1 tham số (với tham số là một chuỗi), (checkString(str))-->
+    <!--  "Hàm trả về Từ viết tắt của chuỗi-->
+    <!--  "-->
+    <!--  "Nếu chuỗi chỉ có 1 từ thì trả về từ đó . Ví dụ   : ""Hello"" => ""Hello""-->
+    <!--  "-->
+    <!--  Nếu chuỗi từ 2 từ trở lên thì trả về chuỗi gồm các ký tự đầu tiên của một từ. Ví dụ:" Object Oriented Programming" => OOP-->
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let arr = str.split(" ");
+        if (arr.length === 1) {
+            return arr.join(" ")
+        }
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            let string = arr[i].split("");
+            result.push(string[0].toUpperCase());
+        }
+        return result.join("");
+    }
+
+    let n = prompt("Nhập chuỗi cần viết tắt");
+    console.log(checkString(n));
+</script>
+</body>
+</html>

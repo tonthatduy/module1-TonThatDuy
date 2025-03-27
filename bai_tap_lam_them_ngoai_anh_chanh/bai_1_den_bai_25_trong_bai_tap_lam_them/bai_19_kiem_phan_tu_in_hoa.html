@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 19</title>
+    <!--  Bài 19	Viết 1 hàm truyền vào 1 tham số (với tham số là một chuỗi), (checkString(str))-->
+    <!--  Hàm trả về  một chuỗi là tất cả các ký tự in Hoa có trong chuỗi-->
+    <!--  Ví dụ: Hello CoDeGym => HCDG-->
+
+</head>
+<body>
+<script>
+    function checkUpperCase(str) {
+        let array = str.split("");
+        let arrResult = [];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === array[i].toUpperCase()) {
+                arrResult.push(array[i]);
+            }
+        }
+        return arrResult.join("");
+    }
+
+    let n = prompt("Nhập chuỗi cần duyệt");
+    console.log(checkUpperCase(n));
+</script>
+</body>
+</html>

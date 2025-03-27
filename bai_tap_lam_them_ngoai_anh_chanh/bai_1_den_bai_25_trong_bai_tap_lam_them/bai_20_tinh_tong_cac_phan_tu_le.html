@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 20</title>
+    <!--  Bài 20	Nhập 1 mảng số từ bàn phím với độ dài n-->
+    <!--  Hiện thị mảng sau khi thêm mới các phần tử-->
+    <!--  Tính tổng các phần tử tử chẵn và ở vị trí lẻ-->
+
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    while (n <= 0) {
+        n = +prompt("Nhập lại độ dài của mảng")
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ: " + i);
+    }
+
+    function sumArray(array) {
+        let sum = 0;
+        for (let i = 1; i < array.length; i += 2) {
+            if (array[i] % 2 === 0) {
+                sum += array[i];
+            }
+        }
+        return sum;
+    }
+
+    console.log(sumArray(arr));
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 21</title>
+    <!--    Bài 21	Viết 1 hàm truyền vào 1 tham số (với tham dạng số), (changeBinary(num))-->
+    <!--    Hàm trả về chuỗi là số nhị phân của tham số truyền vào-->
+    <!--    Ví dụ: changeBinary(2) => "10"-->
+    <!--    Ví dụ: changeBinary(10) => "1010"
+    Cách tính =>	10	2-->
+    <!--    0	5	2-->
+    <!--    1	2	2-->
+    <!--    0	1	2-->
+    <!--    1	0-->
+</head>
+<body>
+<script>
+    function changeBinary(num) {
+        let arr = [];
+        while (num > 0) {
+            arr.push(num % 2);
+            num = parseInt(num / 2)
+        }
+        return arr.reverse().join("");
+    }
+
+    let number = prompt("Nhập số cần đổi")
+    console.log(changeBinary(number));
+</script>
+</body>
+</html>
