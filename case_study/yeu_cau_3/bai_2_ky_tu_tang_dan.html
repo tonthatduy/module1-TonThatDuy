@@ -22,17 +22,16 @@
                 }
             }
             mangChuoiCon.push(chuoiCon);
-
         }
-        let max = mangChuoiCon[0].length;
-        for (let i = 0; i < mangChuoiCon.length; i++) {
+        mangChuoiCon.join(" ")
+        let max = mangChuoiCon[0];
+        for (let i = 0; i < mangChuoiCon.length - 1; i++) {
             if (mangChuoiCon[i].length < mangChuoiCon[i + 1].length) {
-                max = mangChuoiCon[i + 1].length;
+                max = mangChuoiCon[i + 1];
             }
         }
         return max;
     }
-
     console.log(checkString("fbcabccabcde"));
 
 

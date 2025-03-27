@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+    <!--  Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
+</head>
+<body>
+<script>
+    let array = [
+        [2, 3, 5, 7, 11, 13,],
+        [17, 19, 22, 1, 0, 1,]
+    ]
+
+    function checkSoNguyenTo(num) {
+        if (num < 2) {
+            return false;
+        }
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function checkMangSoNguyenTo(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (checkSoNguyenTo(arr[i][j])) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    console.log(checkMangSoNguyenTo(array));
+</script>
+</body>
+</html>
