@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 26</title>
+    <!--  Bài 25	Nhập 1 mảng 2 chiều  từ bàn phím với độ dài m*n-->
+    <!--  Hiện thị mảng sau khi thêm mới các phần tử-->
+    <!--  Tính tổng cac phần tử 2 đường chéo của mảng-->
+    <!--  Ví dụ: 	1	2	3	4-->
+    <!--  5	1	3	3-->
+    <!--  2	5	2	3-->
+    <!--  2	3	5	1-->
+
+
+</head>
+<body>
+<script>
+    function sumDoubleArray(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (i === j || j === (arr[i].length - 1 - i)) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let m = +prompt("Nhập số hàng")
+    let n = +prompt("Nhập số cột")
+    let array = new Array(m)
+    for (let i = 0; i < array.length; i++) {
+        array[i] = new Array(n)
+        for (let j = 0; j < array.length; j++) {
+            array[i][j] = +prompt("Nhập số vào mảng")
+        }
+    }
+    console.log(array);
+    console.log(sumDoubleArray(array));
+</script>
+</body>
+</html>

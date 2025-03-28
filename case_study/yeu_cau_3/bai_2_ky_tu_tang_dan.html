@@ -9,57 +9,57 @@
 </head>
 <body>
 <script>
-    function checkString(str) {
-        let arr = str.split("");
-        let mangChuoiCon = [];
-        for (let i = 0; i < arr.length; i++) {
-            let chuoiCon = arr[i];
-            for (let j = i; j < arr.length - 1; j++) {
-                if (arr[j] < arr[j + 1]) {
-                    chuoiCon += arr[j + 1];
-                } else {
-                    break;
-                }
-            }
-            mangChuoiCon.push(chuoiCon);
-        }
-        mangChuoiCon.join(" ")
-        let max = mangChuoiCon[0];
-        for (let i = 0; i < mangChuoiCon.length - 1; i++) {
-            if (mangChuoiCon[i].length < mangChuoiCon[i + 1].length) {
-                max = mangChuoiCon[i + 1];
-            }
-        }
-        return max;
-    }
-    console.log(checkString("fbcabccabcde"));
-
-
-    /// Cách 2:
-    // function getMaxChildString(str) {
-    //     let chuoiDaiNhat = "";
-    //     let chuoiDauTien = str[0];
-    //
-    //     for (let i = 1; i < str.length; i++) {
-    //         if (str[i] > str[i - 1]) {
-    //             chuoiDauTien += str[i];
-    //         } else {
-    //             if (chuoiDauTien.length > chuoiDaiNhat.length) {
-    //                 chuoiDaiNhat = chuoiDauTien;
+    // function checkString(str) {
+    //     let arr = str.split("");
+    //     let mangChuoiCon = [];
+    //     for (let i = 0; i < arr.length; i++) {
+    //         let chuoiCon = arr[i];
+    //         for (let j = i; j < arr.length - 1; j++) {
+    //             if (arr[j] < arr[j + 1]) {
+    //                 chuoiCon += arr[j + 1];
+    //             } else {
+    //                 break;
     //             }
-    //             chuoiDauTien = str[i]; // Bắt đầu chuỗi con mới
+    //         }
+    //         mangChuoiCon.push(chuoiCon);
+    //     }
+    //     mangChuoiCon.join(" ")
+    //     let max = mangChuoiCon[0];
+    //     for (let i = 0; i < mangChuoiCon.length - 1; i++) {
+    //         if (mangChuoiCon[i].length < mangChuoiCon[i + 1].length) {
+    //             max = mangChuoiCon[i + 1];
     //         }
     //     }
-    //
-    //     // Kiểm tra lần cuối nếu chuỗi hiện tại dài hơn
-    //     if (chuoiDauTien.length > chuoiDaiNhat.length) {
-    //         chuoiDaiNhat = chuoiDauTien;
-    //     }
-    //
-    //     return chuoiDaiNhat;
+    //     return max;
     // }
-    //
-    // console.log(getMaxChildString("abefaefghedcbabcdefgz")); // Output: "aefgh"
+    // console.log(checkString("fbcabccabcde"));
+
+
+    // / Cách 2:
+    function getMaxChildString(str) {
+        let chuoiDaiNhat = "";
+        let chuoiDauTien = str[0];
+
+        for (let i = 1; i < str.length; i++) {
+            if (str[i] > str[i - 1]) {
+                chuoiDauTien += str[i];
+            } else {
+                if (chuoiDauTien.length > chuoiDaiNhat.length) {
+                    chuoiDaiNhat = chuoiDauTien;
+                }
+                chuoiDauTien = str[i]; // Bắt đầu chuỗi con mới
+            }
+        }
+
+        // Kiểm tra lần cuối nếu chuỗi hiện tại dài hơn
+        if (chuoiDauTien.length > chuoiDaiNhat.length) {
+            chuoiDaiNhat = chuoiDauTien;
+        }
+
+        return chuoiDaiNhat;
+    }
+
+    console.log(getMaxChildString("abefaefghedcbabcdefgz")); // Output: "aefgh"
 </script>
 </body>
 </html>

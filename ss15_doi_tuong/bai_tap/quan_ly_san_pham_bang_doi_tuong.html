@@ -29,7 +29,7 @@
 <script>
     let arr = [];
 
-    class ProductPhone {
+    class MayTInh {
         constructor(id, name, price) {
             this.id = id;
             this.name = name;
@@ -60,9 +60,9 @@
         }
     }
 
-    let phone1 = new ProductPhone(1, "Sony Xperia", 200);
-    let phone2 = new ProductPhone(2, "Apple iPhone 8 Plus", 200);
-    let phone3 = new ProductPhone(3, "Samsung Galaxy", 300);
+    let phone1 = new MayTInh(1, "Sony Xperia", 200);
+    let phone2 = new MayTInh(2, "Apple iPhone 8 Plus", 200);
+    let phone3 = new MayTInh(3, "Samsung Galaxy", 300);
     arr.push(phone1, phone2, phone3);
     display(arr)
 
@@ -92,7 +92,7 @@
         let idProduct = document.getElementById("idProduct").value;
         let nameProduct = document.getElementById("nameProduct").value;
         let priceProduct = document.getElementById("priceProduct").value;
-        let product = new ProductPhone(idProduct, nameProduct,priceProduct);
+        let product = new MayTInh(idProduct, nameProduct,priceProduct);
         if (idProduct !== "" && nameProduct !== "" && priceProduct !=="") {
             arr.push(product);
             document.getElementById("idProduct").value = "";

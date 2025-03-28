@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    while (n <= 0) {
+        n = +prompt("Nhập lại đồ dài của mảng");
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập giá trị phần tử thứ: " + i);
+    }
+    console.log(`Mảng người dùng nhập vào ${arr}`);
+
+    function checkNumberFibonacci(num) {
+        let n1 = 0;
+        let n2 = 1;
+        let n = 0;
+        let arrayFibonacci = [n1, n2];
+        while (n <= num) {
+            n = n1 + n2;
+            arrayFibonacci.push(n);
+            n1 = n2;
+            n2 = n;
+        }
+        if (!arrayFibonacci.includes(num)) {
+            return false;
+        }
+        return true;
+    }
+
+    function checkArrayFibonacci(arr) {
+        let arrResult = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (checkNumberFibonacci(arr[i])) {
+                arrResult.push(arr[i]);
+            }
+        }
+        return arrResult.sort((a, b) => a - b);
+    }
+
+    console.log(`Mảng Fibonacci tăng dần ${checkArrayFibonacci(arr)}`);
+</script>
+</body>
+</html>

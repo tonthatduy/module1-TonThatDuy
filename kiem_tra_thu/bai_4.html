@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+
+</head>
+<body>
+<h2> Danh Sách Máy Tính</h2>
+<input type="text" id="maMay" placeholder="Nhập Mã Máy">
+<input type="text" id="tenMay" placeholder="Nhập Tên Máy"> <br>
+<input type="text" id="tenHang" placeholder="Nhập Tên Hãng">
+<input type="number" id="giaBan" placeholder="Nhập Giá ( Triệu Đồng)">
+<button type="button" onclick="themMayTinh()">Thêm</button>
+<div id="result"></div>
+<script>
+    let arrayMaytinh = [];
+
+    class MayTinh {
+        constructor(maMay, tenMay, tenHang, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.tenHang = tenHang;
+            this.giaBan = giaBan;
+        }
+
+        getMaMay() {
+            return this.maMay;
+        }
+
+        getTenMay() {
+            return this.tenMay;
+        }
+
+        getTenHang() {
+            return this.tenHang;
+        }
+
+        getGiaBan() {
+
+            return this.giaBan;
+        }
+
+        setMaMay(maMay) {
+            this.maMay = maMay;
+        }
+
+        setTenMay(tenMay) {
+            this.tenMay = tenMay;
+        }
+
+        setTenHang(tenHang) {
+            this.tenHang = tenHang;
+        }
+
+        setGiaBan(giaBan) {
+            this.giaBan = giaBan;
+        }
+    }
+
+    let mayTinh1 = new MayTinh(1, "Aspire5", "Acer", 20);
+    let mayTinh2 = new MayTinh(2, "TuF Gaming", "Asus", 30);
+    let mayTinh3 = new MayTinh(3, "Lenovo 5", "Lenovo", 40);
+    arrayMaytinh.push(mayTinh1, mayTinh2, mayTinh3);
+    displayMayTinh(arrayMaytinh);
+
+    function displayMayTinh(list) {
+        let tableArray = `<table style="border-collapse: collapse" border="1" width="400" >
+                         <tr>
+                            <th>Mã Máy</th>
+                            <th>Tên Máy</th>
+                            <th>Tên Hãng</th>
+                            <th>Giá Bán</th>
+                         </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            tableArray += `<tr>
+                            <td>${list[i].getMaMay()}</td>
+                            <td>${list[i].getTenMay()}</td>
+                            <td>${list[i].getTenHang()}</td>
+                            <td>${list[i].getGiaBan() + " Triệu"} </td>
+                           </tr>`
+        }
+
+        tableArray += `</table>`;
+        document.getElementById("result").innerHTML = tableArray;
+    }
+
+    function themMayTinh() {
+        let maMay = document.getElementById("maMay").value;
+        let tenMay = document.getElementById("tenMay").value;
+        let tenHang = document.getElementById("tenHang").value;
+        let giaBan = document.getElementById("giaBan").value;
+        let mayTinh = new MayTinh(maMay, tenMay, tenHang, giaBan);
+        if (maMay !== "" && tenMay !== "" && tenHang !== "" && giaBan !== '') {
+            arrayMaytinh.push(mayTinh);
+            document.getElementById("maMay").value = "";
+            document.getElementById("tenMay").value = "";
+            document.getElementById("tenHang").value = "";
+            document.getElementById("giaBan").value = "";
+        } else {
+            alert("Nhập lại");
+        }
+        displayMayTinh(arrayMaytinh);
+    }
+</script>
+</body>
+</html>

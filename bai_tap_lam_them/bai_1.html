@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 </title>
+<!--  0100 - Viết 2 chương trình con tìm Max, Min và vị trí của Max, Min trong mảng-->
+
+</head>
+<body>
+<script>
+  function checkMaxMinArray(arr){
+    let indexmax = -1;
+    let indexmin = -1;
+    let max = arr[0];
+    let min = arr[0];
+    for (let i = 0; i< arr.length; i++){
+      if(max<arr[i]){
+        max = arr[i];
+        indexmax = i;
+      }
+      if(min>arr[i]){
+        min = arr[i];
+        indexmin = i;
+      }
+    }
+    return `${max} ${indexmax}\n${min} ${indexmin}`
+  }
+let array = [16,28,-16,-4,-13,11,28,8,10,21,4,30,-7,-14];
+  console.log(checkMaxMinArray(array));
+</script>
+</body>
+</html>
