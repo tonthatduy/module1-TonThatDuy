@@ -12,6 +12,7 @@
 <input type="text" id="tenHang" placeholder="Nhập Tên Hãng">
 <input type="number" id="giaBan" placeholder="Nhập Giá ( Triệu Đồng)">
 <button type="button" onclick="themMayTinh()">Thêm</button>
+<button type="button" onclick="sapXepTheoGia()">Sắp Xếp</button>
 <div id="result"></div>
 <script>
     let arrayMaytinh = [];
@@ -55,9 +56,16 @@
         setGiaBan(giaBan) {
             this.giaBan = giaBan;
         }
+
+        toString() {
+            this.getMaMay()
+            this.getTenMay()
+            this.getTenHang()
+            this.getGiaBan()
+        }
     }
 
-    let mayTinh1 = new MayTinh(1, "Aspire5", "Acer", 20);
+    let mayTinh1 = new MayTinh(1, "Aspire5", "Acer", 50);
     let mayTinh2 = new MayTinh(2, "TuF Gaming", "Asus", 30);
     let mayTinh3 = new MayTinh(3, "Lenovo 5", "Lenovo", 40);
     arrayMaytinh.push(mayTinh1, mayTinh2, mayTinh3);
@@ -88,7 +96,7 @@
         let maMay = document.getElementById("maMay").value;
         let tenMay = document.getElementById("tenMay").value;
         let tenHang = document.getElementById("tenHang").value;
-        let giaBan = document.getElementById("giaBan").value;
+        let giaBan = parseFloat(document.getElementById("giaBan").value);
         let mayTinh = new MayTinh(maMay, tenMay, tenHang, giaBan);
         if (maMay !== "" && tenMay !== "" && tenHang !== "" && giaBan !== '') {
             arrayMaytinh.push(mayTinh);
@@ -100,6 +108,33 @@
             alert("Nhập lại");
         }
         displayMayTinh(arrayMaytinh);
+    }
+
+    function sapXepTheoGia() {
+        let arr2 = arrayMaytinh;
+        for (let i = 0; i < arr2.length - 1; i++) {
+            for (let j = 0; j < arr2.length - 1 - i; j++) {
+                if (arr2[j].giaBan > arr2[j + 1].giaBan) {
+                    let temp = arr2[j];
+                    arr2[j] = arr2[j + 1];
+                    arr2[j + 1] = temp;
+                }
+            }
+        }
+        displayMayTinh(arrayMaytinh);
+
+        //     // arr2.sort((a, b) => a - b)
+        //     document.getElementById("result").innerHTML = "";
+        //     for (let i = 0; i < arr2.length; i++) {
+        //         document.getElementById("result").innerHTML += `
+        //         <tr>
+        //             <td>${arr2[i].maMay}|</td>
+        //             <td>${arr2[i].tenMay}|</td>
+        //             <td>${arr2[i].tenHang}|</td>
+        //             <td>${arr2[i].giaBan}</td>
+        //         </tr>`;
+        //     }
+        //     displayMayTinh(arrayMaytinh);
     }
 </script>
 </body>

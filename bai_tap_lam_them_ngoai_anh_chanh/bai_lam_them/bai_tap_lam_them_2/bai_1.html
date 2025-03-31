@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 </title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    while (n <= 0 || !(n % 3 === 0) || n > 15) {
+        n = +prompt("Nhập lại độ dài của mảng");
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ: " + i);
+    }
+    alert(arr);
+
+
+    function kiemTraTamGiacVuong(a, b, c) {
+        if (a <= 0 || b <= 0 || c <= 0) {
+            return false;
+        }
+        if (
+            a * a + b * b === c * c ||
+            b * b + c * c === a * a ||
+            a * a + c * c === b * b) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function kiemTraMang(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i += 3) {
+            if (!(kiemTraTamGiacVuong(arr[i], arr[i + 1], arr[i + 2]))) {
+                count++;
+            }
+        }
+        if (count === 1) {
+            return "NO";
+        }
+        return "OK";
+    }
+
+    alert(kiemTraMang(arr));
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 phần 2 </title>
+</head>
+<body>
+<script>
+    // let n = +prompt("Nhập độ dài của mảng");
+    // let array = [];
+    // while (n <= 0 || n > 50) {
+    //     n = +prompt("Nhập lại độ dài của mảng");
+    // }
+    // for (let i = 0; i < n; i++) {
+    //     array[i] = prompt("Nhập phần tử thứ: " + i);
+    // }
+    // console.log(array);
+
+    function checkArray(arr) {
+        let sumChiaHetChoBa = 0;
+        let sumKhongChiaHetChoBa = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 === 0) {
+                sumChiaHetChoBa += arr[i];
+            } else {
+                sumKhongChiaHetChoBa += arr[i];
+            }
+        }
+        return `${sumChiaHetChoBa - sumKhongChiaHetChoBa}`;
+    }
+
+    let arrayTest = [9, 12, 5, 7, 6, 15, 8]
+    console.log(checkArray(arrayTest));
+</script>
+</body>
+</html>

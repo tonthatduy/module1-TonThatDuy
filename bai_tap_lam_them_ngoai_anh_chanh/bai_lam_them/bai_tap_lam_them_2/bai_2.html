@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2 </title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        if(!isNaN(str) || str === "") {
+            prompt("Vui lòng nhập lại");
+        }
+        let arr = str.trim().split(" ");
+        if (arr.length === 1) {
+            return "Chuỗi chỉ có một từ nên không cần viết tắt";
+        }
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== "") {
+                result.push(arr[i]);
+            }
+        }
+        let arrayResult = [];
+        for (let i = 0; i < result.length; i++) {
+            let string = result[i].split("");
+            arrayResult.push(string[0].toUpperCase());
+        }
+        return arrayResult.join("");
+    }
+
+    let n = prompt("Nhập chuỗi cần viết tắt");
+    alert(checkString(n));
+</script>
+</body>
+</html>

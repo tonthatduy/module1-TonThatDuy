@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4 </title>
+</head>
+<body>
+<div id="ketQua">
+</div>
+<script>
+    let danhBa = [];
+
+    class DanhBa {
+        constructor(sdt, ten, diaChi) {
+            this.sdt = sdt;
+            this.ten = ten;
+            this.diaChi = diaChi;
+        }
+
+        getSdt() {
+            return this.sdt;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getDiaChi() {
+            return this.diaChi;
+        }
+
+        setSdt(sdt) {
+            this.sdt = sdt;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setDiaChi(diachi) {
+            this.diaChi = diachi;
+        }
+
+        toString() {
+            return `
+                  So Dien Thoai: ${this.sdt},
+                  Ten chu danh ba: ${this.ten},
+                  Dia Chi: ${this.diaChi},
+              `;
+        }
+    }
+
+    let danhBa1 = new DanhBa("01234567891", "Duy", " 84 Dinh Cong Trang");
+    let danhBa2 = new DanhBa("01235678901", "Trang", "55 Han Thuyen");
+    let danhBa3 = new DanhBa("01235678910", "Dung", "56 An ninh");
+    danhBa.push(danhBa1, danhBa2, danhBa3);
+    hienThiDanhBa(danhBa);
+
+    function hienThiDanhBa(list) {
+        let tableArray = `<table style="border-collapse: collapse" border="1" width="400" >
+                         <tr>
+                            <th>Số Điện Thoại</th>
+                            <th>Tên Chủ Danh Bạ</th>
+                            <th>Địa Chỉ </th>
+                         </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            tableArray += `<tr>
+                            <td>${list[i].getSdt()}</td>
+                            <td>${list[i].getTen()}</td>
+                            <td>${list[i].getDiaChi()}</td>
+                            <td><button onclick="xoaDanhBa(${i})">Xóa</button></td>
+                           </tr>`
+        }
+
+        tableArray += `</table>`;
+        document.getElementById("ketQua").innerHTML = tableArray;
+    }
+
+    function xoaDanhBa(index) {
+        let thongBao = confirm("Bạn có muốn xóa danh bạ này: " + danhBa[index].getTen() + " ?");
+        if (thongBao) {
+            danhBa.splice(index, 1);
+        }
+        hienThiDanhBa(danhBa);
+    }
+</script>
+</body>
+</html>
