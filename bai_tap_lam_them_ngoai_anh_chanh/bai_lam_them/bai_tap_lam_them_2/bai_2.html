@@ -7,7 +7,7 @@
 <body>
 <script>
     function checkString(str) {
-        if(!isNaN(str) || str === "") {
+        if (!isNaN(str) || str === "") {
             prompt("Vui lòng nhập lại");
         }
         let arr = str.trim().split(" ");
@@ -22,8 +22,7 @@
         }
         let arrayResult = [];
         for (let i = 0; i < result.length; i++) {
-            let string = result[i].split("");
-            arrayResult.push(string[0].toUpperCase());
+            arrayResult.push(result[i][0].toUpperCase());
         }
         return arrayResult.join("");
     }

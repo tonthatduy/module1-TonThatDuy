@@ -10,15 +10,15 @@
 
     function kiemTraMang(arr) {
         let arrayResult = [];
-        for (let i = 0; i < arr.length - 1; i++) {
+        for (let i = 0; i < arr.length - 2; i++) {
             if (arr[i] + arr[i + 1] === arr[i + 2]) {
-                arrayResult.push(arr[i], arr[i + 1]);
+                arrayResult.push([arr[i], arr[i + 1]]);
             }
         }
-        return arrayResult;
+        return arrayResult.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1]));
     }
 
-    alert((kiemTraMang(arrayTest)));
+    document.write((kiemTraMang(arrayTest)));
 </script>
 </body>
 </html>

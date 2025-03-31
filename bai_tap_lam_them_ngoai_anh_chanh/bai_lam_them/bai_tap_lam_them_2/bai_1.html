@@ -8,7 +8,7 @@
 <script>
     let n = +prompt("Nhập độ dài của mảng");
     let arr = [];
-    while (n <= 0 || !(n % 3 === 0) || n > 15) {
+    while (n <= 0 || n % 3 !== 0 || n > 15 || !Number.isInteger(n)) {
         n = +prompt("Nhập lại độ dài của mảng");
     }
     for (let i = 0; i < n; i++) {
@@ -32,14 +32,10 @@
     }
 
     function kiemTraMang(arr) {
-        let count = 0;
         for (let i = 0; i < arr.length; i += 3) {
             if (!(kiemTraTamGiacVuong(arr[i], arr[i + 1], arr[i + 2]))) {
-                count++;
+                return "NO";
             }
-        }
-        if (count === 1) {
-            return "NO";
         }
         return "OK";
     }
